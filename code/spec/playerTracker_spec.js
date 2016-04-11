@@ -17,7 +17,6 @@ describe("Player Selection", function() {
     expect(function(){ new PlayerTracker(); }).toThrow(new Error("Game must have players"));
   });
 
-
   it("should have 2 players", function() {
     playerTracker = new PlayerTracker(players);
     expect(playerTracker.playerCount()).toBe(2);
