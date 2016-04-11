@@ -8,8 +8,12 @@ class ChickenPen {
     this.chickens = chickens;
   }
 
-  chickenCount(){
+  count(){
     return this.chickens.length;
+  }
+
+  add(chicken) {
+    this.chickens.push(chicken);
   }
 
 }

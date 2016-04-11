@@ -47,7 +47,14 @@ describe("Chicken Pen", function() {
 
   it("should have 4 chickens", function() {
     chickenPen = new ChickenPen(chickens);
-    expect(chickenPen.chickenCount()).toBe(4);
+    expect(chickenPen.count()).toBe(4);
+  });
+
+  it("should add a chicken", function() {
+    chickenPen = new ChickenPen(chickens);
+    chicken = new Chicken({name:"Shiny"});
+    chickenPen.add(chicken);
+    expect(chickenPen.count()).toBe(5);
   });
 
 });
