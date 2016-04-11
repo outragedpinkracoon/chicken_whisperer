@@ -1,6 +1,6 @@
 "use strict"
 
-class PlayerSelection {
+class PlayerTracker {
 
   constructor(players) {
     if (!players)
@@ -35,4 +35,4 @@ class PlayerSelection {
   }
 }
 
-module.exports = PlayerSelection; 
+module.exports = PlayerTracker; 

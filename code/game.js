@@ -2,8 +2,8 @@
 
 class Game {
 
-  constructor(playerSelection) {
-    this.playerSelection = playerSelection;
+  constructor(playerTracker) {
+    this.playerTracker = playerTracker;
   }
 
 }

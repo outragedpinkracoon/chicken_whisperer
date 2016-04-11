@@ -1,5 +1,5 @@
 var Game = require('../game.js')
-var PlayerSelection = require('../playerSelection.js')
+var PlayerTracker = require('../playerTracker.js')
 var Player = require('../player.js')
 
 describe("Game", function() {
@@ -13,15 +13,15 @@ describe("Game", function() {
 
     players = [player1, player2];
 
-    playerSelection = new PlayerSelection(players);
+    playerTracker = new PlayerTracker(players);
 
-    game = new Game(playerSelection);
+    game = new Game(playerTracker);
 
   });
 
   it("should have player selection", function() {
-    expect(game.playerSelection).not.toBe(null);
-    expect(game.playerSelection).not.toBeUndefined;
+    expect(game.playerTracker).not.toBe(null);
+    expect(game.playerTracker).not.toBeUndefined;
   });
 
 });
