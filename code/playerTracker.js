@@ -10,7 +10,7 @@ class PlayerTracker {
   }
 
   updateCurrentPlayer() {
-    this.currentPlayer = players[this.nextPlayerIndex()];
+    this.currentPlayer = this.players[this.nextPlayerIndex()];
   }
 
   nextPlayerIndex() {
