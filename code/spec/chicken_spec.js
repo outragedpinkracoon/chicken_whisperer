@@ -24,4 +24,15 @@ describe("Chicken", function() {
   it("should have a scare", function() {
     expect(chicken.scare).toBe(3);
   });
+
+  it("should decrease speed", function() {
+    chicken.decreaseSpeed();
+    expect(chicken.speed).toBe(4);
+  });
+
+  it("should not decrease speed below 0", function() {
+    chicken.speed = 0;
+    chicken.decreaseSpeed();
+    expect(chicken.speed).toBe(0);
+  });
 });
