@@ -8,9 +8,9 @@ class Chicken {
     this.scare = options.scare;
   }
 
-  decreaseSpeed() {
+  decreaseSpeed(value = 1) {
     if(this.speed === 0) return;
-    this.speed--;
+    this.speed = this.speed - value;
   }
 
 }
