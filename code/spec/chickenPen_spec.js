@@ -45,4 +45,9 @@ describe("Chicken Pen", function() {
     expect(function() { new ChickenPen() }).toThrow(new Error("Must have chickens"));
   });
 
+  it("should have 4 chickens", function() {
+    chickenPen = new ChickenPen(chickens);
+    expect(chickenPen.chickenCount()).toBe(4);
+  });
+
 });
