@@ -1,27 +1,27 @@
 var Game = require('../game.js')
+var PlayerSelection = require('../playerSelection.js')
 var Player = require('../player.js')
-var Chicken = require('../chicken.js')
 
 describe("Game", function() {
 
   var game;
-  var players;
 
   beforeEach(function() {
-    // chicken_options = {
-    //   players: [new Player]],
-    //   speed: 5,
-    //   scare: 3
-    // }
-    // chicken = new Chicken(chicken_options);
 
     player1 = new Player("Valerie");
     player2 = new Player("Jay");
 
     players = [player1, player2];
 
-    game = new Game(players);
+    playerSelection = new PlayerSelection(players);
 
+    game = new Game(playerSelection);
+
+  });
+
+  it("should have player selection", function() {
+    expect(game.playerSelection).not.toBe(null);
+    expect(game.playerSelection).not.toBeUndefined;
   });
 
 });
