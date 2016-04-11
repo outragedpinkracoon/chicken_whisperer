@@ -53,6 +53,8 @@ describe("Player Selection", function() {
     playerSelection = new PlayerSelection(players);
     playerSelection.updateCurrentPlayer();
     expect(playerSelection.currentPlayer.name).toBe("Jay");
+    playerSelection.updateCurrentPlayer();
+    expect(playerSelection.currentPlayer.name).toBe("Valerie");
   });
 
 });
