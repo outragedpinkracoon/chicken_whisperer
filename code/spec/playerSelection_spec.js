@@ -49,7 +49,7 @@ describe("Player Selection", function() {
     expect(playerSelection.nextPlayerIndex()).toBe(1);
   });
 
-  it("should udate current player", function() {
+  it("should update current player", function() {
     playerSelection = new PlayerSelection(players);
     playerSelection.updateCurrentPlayer();
     expect(playerSelection.currentPlayer.name).toBe("Jay");
