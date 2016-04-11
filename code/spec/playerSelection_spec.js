@@ -40,7 +40,8 @@ describe("Player Selection", function() {
 
   it("should not have reached last player", function() {
     playerSelection = new PlayerSelection(players);
-    expect(playerSelection.reachedLastPlayer(2)).toBe(true);
+    expect(playerSelection.reachedLastPlayer(0)).toBe(false);
+    expect(playerSelection.reachedLastPlayer(1)).toBe(false);
   });
 
   it("should return index of next player", function() {
