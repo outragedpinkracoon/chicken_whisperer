@@ -9,6 +9,10 @@ class PlayerSelection {
     this.currentPlayer = players[0];
   }
 
+  updateCurrentPlayer() {
+    this.currentPlayer = players[this.nextPlayerIndex()];
+  }
+
   nextPlayerIndex() {
     var nextPlayerIndex = this.currentPlayerIndex() + 1;
 
