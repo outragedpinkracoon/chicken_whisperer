@@ -5,6 +5,7 @@ describe("Chicken Pen", function() {
 
   var chickenPen;
   var chickens;
+  var chicken_1;
 
   beforeEach(function() {
 
@@ -32,7 +33,7 @@ describe("Chicken Pen", function() {
       scare: 2
     }
 
-    var chicken_1 = new Chicken(chicken1_options);
+    chicken_1 = new Chicken(chicken1_options);
     var chicken_2 = new Chicken(chicken2_options);
     var chicken_3 = new Chicken(chicken3_options);
     var chicken_4 = new Chicken(chicken4_options);
@@ -55,6 +56,13 @@ describe("Chicken Pen", function() {
     chicken = new Chicken({name:"Shiny"});
     chickenPen.add(chicken);
     expect(chickenPen.count()).toBe(5);
+  });
+
+  it("should remove a chicken", function() {
+    chickenPen = new ChickenPen(chickens);
+
+    chickenPen.remove(chicken_1);
+    expect(chickenPen.count()).toBe(3);
   });
 
 });
