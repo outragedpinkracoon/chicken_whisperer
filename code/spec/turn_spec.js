@@ -64,15 +64,15 @@ describe("Turn", function(){
 
   it("does not start finished", function(){
     expect(turn.finished).toBe(false);
-  })
+  });
 
   it("starts with 0 catch dice", function(){
     expect(turn.catchDice).toEqual([]);
-  })
+  });
 
   it("starts with 0 catch dice", function(){
     expect(turn.catchDice).toEqual([]);
-  })
+  });
 
 });
 
