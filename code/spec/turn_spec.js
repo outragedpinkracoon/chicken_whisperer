@@ -67,16 +67,25 @@ describe("Turn", function(){
   });
 
   it("starts with 0 capture dice", function(){
-    expect(turn.dice.capture).toEqual([]);
+    expect(turn.captureDice).toEqual(0);
   });
 
   it("starts with 2 approach dice", function(){
-    expect(turn.dice.approach.length).toBe(2);
+    expect(turn.approachDice).toBe(2);
   });
 
-  // it("gains a capture dice on even roll", function(){
-  //   expect(turn.captureDice).toEqual([]);
-  // });
+  it("returns approach dice roll", function(){
+    spyOn(turn.die, "roll").and.returnValues(1, 1);
+    var result = turn.approachRoll();
+
+    expect(result).toBe(2);
+  });
+
+  it("gains a capture dice on even roll", function(){
+    spyOn(turn.die, "roll").and.returnValues(1, 1);
+    turn.approachChicken();
+    expect(turn.captureDice).toBe(1);
+  });
 
 });
 

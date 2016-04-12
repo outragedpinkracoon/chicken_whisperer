@@ -3,7 +3,11 @@
 class Die {
 
   constructor(sides) {
-    this.sides = sides;
+    if(!sides) {
+      this.sides = 6;
+    } else {
+      this.sides = sides;
+    }
   }
 
   roll(){

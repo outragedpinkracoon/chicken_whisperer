@@ -11,27 +11,28 @@ class Turn {
     this.chickenPen = chickenPen;
     this.finished = false;
     this.die = die;
-    this.dice = {
-      capture: [],
-      approach: [die, die]
-    }
+    this.captureDice = 0;
+    this.approachDice = 2;
   }
 
   approachChicken(){
-    var result = rollDice();
-    // if(result.isEven()){
-    //   this.captureDice.push(dice);
-    // }
-    // else{
+    var result = this.approachRoll();
+    if(result.isEven()){
+      this.captureDice++;
+    }
+    else{
       //scare chickens
-    // }
+    }
   }
 
-  rollDice(){
-    var result;
-    this.dice.approach.forEach(function(die){
-      result += die.roll();
-    })
+  approachRoll(){
+    var result = 0;
+
+    for(var i = 0; i < this.approachDice; i++)
+    {
+      result += this.die.roll();
+    }
+  
     return result;
   }
 
