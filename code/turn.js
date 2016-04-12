@@ -28,11 +28,9 @@ class Turn {
   approachRoll(){
     var result = 0;
 
-    for(var i = 0; i < this.approachDice; i++)
-    {
+    for(var i = 0; i < this.approachDice; i++) {
       result += this.die.roll();
     }
-  
     return result;
   }
 
