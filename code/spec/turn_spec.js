@@ -70,9 +70,9 @@ describe("Turn", function(){
     expect(turn.dice.capture).toEqual([]);
   });
 
-  // it("returns approach dice roll", function(){
-  //   expect(turn.captureDice).toEqual([]);
-  // });
+  it("starts with 2 approach dice", function(){
+    expect(turn.dice.approach.length).toBe(2);
+  });
 
   // it("gains a capture dice on even roll", function(){
   //   expect(turn.captureDice).toEqual([]);

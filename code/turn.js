@@ -29,8 +29,8 @@ class Turn {
 
   rollDice(){
     var result;
-    dice.forEach(function(){
-      result += dice.roll();
+    this.dice.approach.forEach(function(die){
+      result += die.roll();
     })
     return result;
   }
