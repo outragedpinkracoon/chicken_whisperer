@@ -1,6 +1,6 @@
 "use strict"
 
-class Dice {
+class Die {
 
   constructor(sides) {
     this.sides = sides;
@@ -11,4 +11,4 @@ class Dice {
   }
 }
 
-module.exports = Dice
+module.exports = Die

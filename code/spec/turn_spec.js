@@ -2,7 +2,7 @@ var Player = require("../player.js")
 var Turn = require("../turn.js")
 var Chicken = require("../chicken.js")
 var ChickenPen = require("../chickenPen.js")
-var Dice = require("../dice.js")
+var Die = require("../die.js")
 
 describe("Turn", function(){
   var player;
@@ -43,7 +43,9 @@ describe("Turn", function(){
 
     chickenPen = new ChickenPen(chickens);
 
-    turn = new Turn(player, chickenPen, new Dice());
+    var dice = [new Die(), new Die()];
+
+    turn = new Turn(player, chickenPen, dice);
   })
 
   it("should have player", function(){
@@ -70,9 +72,9 @@ describe("Turn", function(){
     expect(turn.captureDice).toEqual([]);
   });
 
-  // it("starts with 0 catch dice", function(){
-  //   expect(turn.catchDice).toEqual([]);
-  // });
+  it("gain a capture dice on even roll", function(){
+    expect(turn.captureDice).toEqual([]);
+  });
 
 });
 

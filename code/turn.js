@@ -1,5 +1,5 @@
 "use strict"
-var Dice = require("./dice.js")
+var Dice = require("./die.js")
 require("./extensions/number.js")
 
 class Turn {
@@ -11,6 +11,7 @@ class Turn {
     this.chickenPen = chickenPen;
     this.finished = false;
     this.captureDice = [];
+    this.dice = dice;
   }
 
   approachChicken(){
