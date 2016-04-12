@@ -1,11 +1,13 @@
 "use strict"
 var Turn = require("./turn.js")
+require("./extensions/array.js")
 
 class Game {
 
   constructor(players, chickenPen) {
-    if (!players)
-      throw new Error("Game must have players");
+    if (!players) throw new Error("Game must have players");
+    if (!chickenPen) throw new Error("Game must have chicken pen");
+
     this.players = players;
     this.chickenPen = chickenPen;
     this.currentPlayer = players[0];
@@ -28,7 +30,7 @@ class Game {
   nextTurn(){
     if(this.turn !== null)
       this.updateCurrentPlayer();
-    this.turn = new Turn(this.currentPlayer);
+    this.turn = new Turn(this.currentPlayer, this.chickenPen);
   }
 
 }
