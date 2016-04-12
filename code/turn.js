@@ -10,7 +10,7 @@ class Turn {
     this.player = player;
     this.chickenPen = chickenPen;
     this.finished = false;
-    this.catchDice = [];
+    this.captureDice = [];
   }
 
   approachChicken(){

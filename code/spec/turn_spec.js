@@ -66,13 +66,13 @@ describe("Turn", function(){
     expect(turn.finished).toBe(false);
   });
 
-  it("starts with 0 catch dice", function(){
-    expect(turn.catchDice).toEqual([]);
+  it("starts with 0 capture dice", function(){
+    expect(turn.captureDice).toEqual([]);
   });
 
-  it("starts with 0 catch dice", function(){
-    expect(turn.catchDice).toEqual([]);
-  });
+  // it("starts with 0 catch dice", function(){
+  //   expect(turn.catchDice).toEqual([]);
+  // });
 
 });
 
