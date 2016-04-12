@@ -2,7 +2,7 @@ var Player = require("../player.js")
 var Turn = require("../turn.js")
 var Chicken = require("../chicken.js")
 var ChickenPen = require("../chickenPen.js")
-var Dice = require("../fakeDice.js")
+var Dice = require("../dice.js")
 
 describe("Turn", function(){
   var player;
