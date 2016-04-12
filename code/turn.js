@@ -6,7 +6,9 @@ class Turn {
     
     this.player = player;
     this.chickenPen = chickenPen;
+    this.finished = false;
   }
+
 }
 
 module.exports = Turn;

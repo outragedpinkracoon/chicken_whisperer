@@ -41,15 +41,15 @@ describe("Turn", function(){
     chickens = [chicken_1, chicken_2, chicken_3, chicken_4]
 
     chickenPen = new ChickenPen(chickens);
+
+    turn = new Turn(player, chickenPen);
   })
 
   it("should have player", function(){
-    turn = new Turn(player, chicken);
     expect(turn.player).toEqual(player);
   })
 
   it("should have chicken pen", function(){
-    turn = new Turn(player, chickenPen);
     expect(turn.player).toEqual(player);
   })
 
@@ -60,6 +60,10 @@ describe("Turn", function(){
   it("should throw error with no chicken pen", function() {
     expect(function(){ new Turn(player); }).toThrow(new Error("Turn must have chicken pen"));
   });
+
+  it("does not start finished", function(){
+    expect(turn.finished).toBeFalse();
+  })
 
 });
 
