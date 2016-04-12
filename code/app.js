@@ -2,14 +2,11 @@ var Chicken = require('./chicken.js')
 var ChickenPen = require('./chickenPen.js')
 var Game = require('./game.js')
 var Player = require('./player.js')
-var PlayerTracker = require('./playerTracker.js')
 
 var player1 = new Player("Valerie");
 var player2 = new Player("Jay");
 
 var players = [player1, player2];
-
-var playerTracker = new PlayerTracker(players);
 
 var chicken1_options = {
   name: "Old Chicken",
@@ -44,4 +41,4 @@ var chickens = [chicken_1, chicken_2, chicken_3, chicken_4]
 
 var chickenPen = new ChickenPen(chickens);
 
-game = new Game(playerTracker, chickenPen);
+game = new Game(players, chickenPen);

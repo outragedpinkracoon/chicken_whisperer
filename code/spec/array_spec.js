@@ -12,4 +12,8 @@ describe("Array", function() {
     expect(result).toEqual([]);
   });
 
+  it("should return the first item in the array", function() {
+    expect([1,2,3].first()).toBe(1);
+  });
+
 });
