@@ -48,13 +48,8 @@ describe("Game", function() {
 
     var chickenPen = new ChickenPen(chickens);
 
-    game = new Game(players, chickenPen, new Dice());
+    game = new Game(players, chickenPen);
 
-  });
-
-  it("should have player selection", function() {
-    expect(game.playerTracker).not.toBe(null);
-    expect(game.playerTracker).not.toBeUndefined;
   });
 
   it("should have chicken pen", function() {
@@ -79,8 +74,8 @@ describe("Game", function() {
     expect(game.currentPlayer.name).toBe("Jay");
   });
 
-  it("should start with no turn", function() {
-    expect(game.currentTurn()).toBeNull();
+  it("should start with player 1 turn", function() {
+    expect(game.currentTurn().player.name).toBe("Valerie");
   });
 
 });
