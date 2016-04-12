@@ -2,6 +2,7 @@ var Game = require('../game.js')
 var Player = require('../player.js')
 var Chicken = require('../chicken.js')
 var ChickenPen = require('../chickenPen.js')
+var Dice = require('../dice.js')
 
 describe("Game", function() {
 
@@ -47,7 +48,7 @@ describe("Game", function() {
 
     var chickenPen = new ChickenPen(chickens);
 
-    game = new Game(players, chickenPen);
+    game = new Game(players, chickenPen, new Dice());
 
   });
 

@@ -2,6 +2,7 @@ var Chicken = require('./chicken.js')
 var ChickenPen = require('./chickenPen.js')
 var Game = require('./game.js')
 var Player = require('./player.js')
+var Dice = require('./dice.js')
 
 var player1 = new Player("Valerie");
 var player2 = new Player("Jay");
@@ -41,4 +42,4 @@ var chickens = [chicken_1, chicken_2, chicken_3, chicken_4]
 
 var chickenPen = new ChickenPen(chickens);
 
-game = new Game(players, chickenPen);
+game = new Game(players, chickenPen, new Dice());
