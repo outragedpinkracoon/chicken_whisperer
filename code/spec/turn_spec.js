@@ -62,7 +62,7 @@ describe("Turn", function(){
   });
 
   it("does not start finished", function(){
-    expect(turn.finished).toBeFalse();
+    expect(turn.finished).toBe(false);
   })
 
 });
