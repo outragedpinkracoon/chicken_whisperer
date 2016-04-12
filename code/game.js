@@ -9,6 +9,7 @@ class Game {
     this.dice = dice;
     this.chickenPen = chickenPen;
     this.currentPlayer = players[0];
+    this.turn = null;
   }
 
   updateCurrentPlayer() {
@@ -17,6 +18,10 @@ class Game {
 
   playerCount() {
     return this.players.length;
+  }
+
+  currentTurn(){
+    return this.turn;
   }
 
 }

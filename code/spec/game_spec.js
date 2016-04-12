@@ -79,4 +79,8 @@ describe("Game", function() {
     expect(game.currentPlayer.name).toBe("Jay");
   });
 
+  it("should start with no turn", function() {
+    expect(game.currentTurn()).toBeNull();
+  });
+
 });
