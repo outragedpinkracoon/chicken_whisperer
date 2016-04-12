@@ -43,9 +43,7 @@ describe("Turn", function(){
 
     chickenPen = new ChickenPen(chickens);
 
-    var dice = [new Die(), new Die()];
-
-    turn = new Turn(player, chickenPen, dice);
+    turn = new Turn(player, chickenPen, new Die());
   })
 
   it("should have player", function(){
@@ -69,12 +67,16 @@ describe("Turn", function(){
   });
 
   it("starts with 0 capture dice", function(){
-    expect(turn.captureDice).toEqual([]);
+    expect(turn.dice.capture).toEqual([]);
   });
 
-  it("gain a capture dice on even roll", function(){
-    expect(turn.captureDice).toEqual([]);
-  });
+  // it("returns approach dice roll", function(){
+  //   expect(turn.captureDice).toEqual([]);
+  // });
+
+  // it("gains a capture dice on even roll", function(){
+  //   expect(turn.captureDice).toEqual([]);
+  // });
 
 });
 
