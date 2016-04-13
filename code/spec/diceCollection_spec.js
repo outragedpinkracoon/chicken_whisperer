@@ -27,4 +27,9 @@ describe("Dice Collection", function() {
     diceCollection = new DiceCollection(die, 4);
     expect(diceCollection.approachDice).toBe(4);
   });
+
+  it("should add a capture die", function() {
+    diceCollection.addCaptureDie();
+    expect(diceCollection.captureDice).toBe(1);
+  });
 });

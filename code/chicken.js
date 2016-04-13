@@ -9,9 +9,8 @@ class Chicken {
   }
 
   decreaseSpeed(value) {
-    if(!value)
-      value = 1;
     if(this.speed === 0) return;
+    if(!value) value = 1;
     this.speed = this.speed - value;
   }
 
