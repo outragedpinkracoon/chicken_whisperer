@@ -8,8 +8,9 @@ class DiceCollection {
   }
 
   addCaptureDie(){
-
+    this.captureDice++;
   }
+  
 }
 
 module.exports = DiceCollection;

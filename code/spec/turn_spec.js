@@ -3,6 +3,7 @@ var Turn = require("../turn.js")
 var Chicken = require("../chicken.js")
 var ChickenPen = require("../chickenPen.js")
 var Die = require("../die.js")
+var DiceCollection = require("../diceCollection.js")
 
 describe("Turn", function(){
   var player;
@@ -43,7 +44,9 @@ describe("Turn", function(){
 
     chickenPen = new ChickenPen(chickens);
 
-    turn = new Turn(player, chickenPen, new Die());
+    var diceCollection = new DiceCollection(new Die());
+
+    turn = new Turn(player, chickenPen, diceCollection);
   })
 
   it("should have player", function(){
@@ -67,24 +70,23 @@ describe("Turn", function(){
   });
 
   it("starts with 0 capture dice", function(){
-    expect(turn.captureDice).toEqual(0);
+    expect(turn.diceCollection.captureDice).toEqual(0);
   });
 
   it("starts with 2 approach dice", function(){
-    expect(turn.approachDice).toBe(2);
+    expect(turn.diceCollection.approachDice).toBe(2);
   });
 
   it("returns approach dice roll", function(){
-    spyOn(turn.die, "roll").and.returnValues(1, 1);
+    spyOn(turn.diceCollection.die, "roll").and.returnValues(1, 1);
     var result = turn.approachRoll();
-
     expect(result).toBe(2);
   });
 
   it("gains a capture dice on even roll", function(){
-    spyOn(turn.die, "roll").and.returnValues(1, 1);
+    spyOn(turn.diceCollection.die, "roll").and.returnValues(1, 1);
     turn.approachChicken();
-    expect(turn.captureDice).toBe(1);
+    expect(turn.diceCollection.captureDice).toBe(1);
   });
 
 });
