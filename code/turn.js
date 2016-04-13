@@ -11,6 +11,7 @@ class Turn {
     this.chickenPen = chickenPen;
     this.finished = false;
     this.die = die;
+    
     this.captureDice = 0;
     this.approachDice = 2;
   }
