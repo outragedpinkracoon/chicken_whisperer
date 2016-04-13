@@ -4,8 +4,13 @@ var Dice = require("./die.js")
 class Turn {
 
   constructor(player, chickenPen, diceCollection){
-    if (player === undefined) throw new Error("Turn must have player");
-    if (chickenPen === undefined) throw new Error("Turn must have chicken pen");
+    if (player === undefined) {
+      throw new Error("Turn must have player");
+    }
+
+    if (chickenPen === undefined) {
+      throw new Error("Turn must have chicken pen");
+    } 
     
     this.player = player;
     this.chickenPen = chickenPen;

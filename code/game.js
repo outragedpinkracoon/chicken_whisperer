@@ -4,8 +4,13 @@ var Turn = require("./turn.js")
 class Game {
 
   constructor(players, chickenPen) {
-    if (players === undefined) throw new Error("Game must have players");
-    if (chickenPen === undefined) throw new Error("Game must have chicken pen");
+    if (players === undefined) {
+      throw new Error("Game must have players");
+    }
+
+    if (chickenPen === undefined) {
+      throw new Error("Game must have chicken pen");
+    }
 
     this.players = players;
     this.chickenPen = chickenPen;

@@ -1,3 +1,4 @@
+require("babel-register");
 var Chicken = require("../chicken.js")
 var ChickenPen = require("../chickenPen.js")
 

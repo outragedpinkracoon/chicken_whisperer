@@ -1,4 +1,4 @@
-require("babel-core").transform("code");
+require("babel-register");
 var Game = require('../game.js')
 var Player = require('../player.js')
 var Chicken = require('../chicken.js')

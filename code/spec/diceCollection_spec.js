@@ -1,4 +1,4 @@
-require("babel-core").transform("code");
+require("babel-register");
 var DiceCollection = require('../diceCollection.js')
 var Die = require('../die.js');
 
