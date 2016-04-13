@@ -3,7 +3,10 @@
 class DiceCollection {
   constructor(die, numberOfApproachDice) {
     this.die = die;
-    this.approachDice = numberOfApproachDice ? numberOfApproachDice : 2;
+    if(numberOfApproachDice === undefined)
+      this.approachDice = 2
+    else
+      this.approachDice = numberOfApproachDice
     this.captureDice = 0
   }
 

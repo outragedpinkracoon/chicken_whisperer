@@ -3,6 +3,7 @@ var Dice = require("./die.js")
 require("./extensions/number.js")
 
 class Turn {
+
   constructor(player, chickenPen, diceCollection){
     if (!player) throw new Error("Turn must have player");
     if (!chickenPen) throw new Error("Turn must have chicken pen");
