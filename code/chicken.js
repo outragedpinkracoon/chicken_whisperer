@@ -27,6 +27,7 @@ class Chicken {
     if(!value) value = 1;
     this.speed = this.speed - value;
   }
+  
 }
 
 module.exports = Chicken;

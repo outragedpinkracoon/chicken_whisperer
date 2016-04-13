@@ -69,4 +69,14 @@ describe("Chicken Pen", function() {
     expect(chickenPen.count()).toBe(3);
   });
 
+  it("should scare all chickens", function() {
+    var chickenPen = new ChickenPen(chickens);
+
+    chickenPen.scareChickens();
+    expect(chickenPen.chickens[0].speed).toBe(4);
+    expect(chickenPen.chickens[1].speed).toBe(13);
+    expect(chickenPen.chickens[2].speed).toBe(9);
+    expect(chickenPen.chickens[3].speed).toBe(7);
+  });
+
 });

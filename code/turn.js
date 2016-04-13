@@ -25,15 +25,9 @@ class Turn {
       this.diceCollection.addCaptureDie();
       return;
     }
-    //this.scareChickens();
+    this.chickenPen.scareChickens();
   }
-
-  scareChickens(){
-    this.chickenPen.chickens.forEach(function(chicken, index){
-      //chicken.scare();
-    });
-  }
-
+  
   approachRoll(){
     var result = 0;
     var limit = this.diceCollection.approachDice;

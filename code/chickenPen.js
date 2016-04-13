@@ -27,6 +27,13 @@ class ChickenPen {
     this.chickens = result;
   }
 
+  scareChickens(){
+    this.chickens.forEach(function(chicken, index){
+      chicken.scare();
+    });
+  }
+
+
 }
 
 module.exports = ChickenPen;
