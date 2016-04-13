@@ -9,7 +9,7 @@ describe("Chicken", function() {
     var options = {
       name: "Old Chicken",
       speed: 5,
-      scare: 3
+      maxScare: 3
     }
     chicken = new Chicken(options);
   });
@@ -22,23 +22,25 @@ describe("Chicken", function() {
     expect(chicken.speed).toBe(5);
   });
 
-  it("should have a scare", function() {
-    expect(chicken.scare).toBe(3);
+  it("should have a max scare value", function() {
+    expect(chicken.maxScare).toBe(3);
   });
 
   it("should decrease speed by 1", function() {
-    chicken.decreaseSpeed();
+    chicken.scare();
     expect(chicken.speed).toBe(4);
   });
 
   it("should decrease speed by 2", function() {
-    chicken.decreaseSpeed(2);
+    chicken.scare(2);
     expect(chicken.speed).toBe(3);
   });
 
   it("should not decrease speed below 0", function() {
     chicken.speed = 0;
-    chicken.decreaseSpeed();
+    chicken.scare();
     expect(chicken.speed).toBe(0);
   });
+
+
 });

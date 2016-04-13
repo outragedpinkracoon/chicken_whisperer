@@ -18,25 +18,25 @@ describe("Game", function() {
     var chicken1_options = {
       name: "Old Chicken",
       speed: 5,
-      scare: 3
+      maxScare: 3
     }
 
     var chicken2_options = {
       name: "Young Chicken",
       speed: 14,
-      scare: 1
+      maxScare: 1
     }
 
     var chicken3_options = {
       name: "Anime Chicken",
       speed: 10,
-      scare: 2
+      maxScare: 2
     }
 
     var chicken4_options = {
       name: "Average Chicken",
       speed: 8,
-      scare: 2
+      maxScare: 2
     }
 
     var chicken_1 = new Chicken(chicken1_options);

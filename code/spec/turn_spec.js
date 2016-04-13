@@ -19,25 +19,25 @@ describe("Turn", function(){
     var chickenOneOptions = {
       name: "Old Chicken",
       speed: 5,
-      scare: 3
+      maxScare: 3
     }
 
     var chickenTwoOptions = {
       name: "Young Chicken",
       speed: 14,
-      scare: 1
+      maxScare: 1
     }
 
     var chickenThreeOptions = {
       name: "Anime Chicken",
       speed: 10,
-      scare: 2
+      maxScare: 2
     }
 
     var chickenFourOptions = {
       name: "Average Chicken",
       speed: 8,
-      scare: 2
+      maxScare: 2
     }
 
     chicken1 = new Chicken(chickenOneOptions);

@@ -25,7 +25,13 @@ class Turn {
       this.diceCollection.addCaptureDie();
       return;
     }
-    //scare chickens
+    //this.scareChickens();
+  }
+
+  scareChickens(){
+    this.chickenPen.chickens.forEach(function(chicken, index){
+      //chicken.scare();
+    });
   }
 
   approachRoll(){

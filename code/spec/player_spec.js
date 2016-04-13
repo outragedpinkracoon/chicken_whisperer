@@ -11,7 +11,7 @@ describe("Player", function() {
     var options = {
       name: "Old Chicken",
       speed: 5,
-      scare: 3
+      maxScare: 3
     }
     chicken = new Chicken(options);
 
