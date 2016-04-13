@@ -1,6 +1,5 @@
-"use strict"
-var Turn = require("./turn.js")
 require("./extensions/array.js")
+var Turn = require("./turn.js")
 
 class Game {
 

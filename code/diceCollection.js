@@ -1,5 +1,3 @@
-"use strict"
-
 class DiceCollection {
 
   constructor(die, numberOfApproachDice = 2) {

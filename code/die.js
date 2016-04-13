@@ -1,5 +1,3 @@
-"use strict"
-
 class Die {
 
   constructor(sides = 6) {

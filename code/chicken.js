@@ -1,5 +1,3 @@
-"use strict"
-
 class Chicken {
 
   constructor(options){

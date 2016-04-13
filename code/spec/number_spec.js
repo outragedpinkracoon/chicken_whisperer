@@ -1,3 +1,4 @@
+require("babel-register");
 require("../extensions/number.js")
 
 describe("Number", function(){

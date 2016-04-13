@@ -1,3 +1,4 @@
+require("babel-core").transform("code");
 var Game = require('../game.js')
 var Player = require('../player.js')
 var Chicken = require('../chicken.js')

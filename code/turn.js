@@ -1,6 +1,5 @@
-"use strict"
-var Dice = require("./die.js")
 require("./extensions/number.js")
+var Dice = require("./die.js")
 
 class Turn {
 

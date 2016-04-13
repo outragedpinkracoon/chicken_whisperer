@@ -1,4 +1,4 @@
-require("babel-core").transform("code");
+require("babel-register");
 var Player = require("../player.js")
 var Turn = require("../turn.js")
 var Chicken = require("../chicken.js")
@@ -16,34 +16,34 @@ describe("Turn", function(){
   beforeEach(function(){
     player = new Player("Valerie");
 
-    var chicken1Options = {
+    var chickenOneOptions = {
       name: "Old Chicken",
       speed: 5,
       scare: 3
     }
 
-    var chicken2Options = {
+    var chickenTwoOptions = {
       name: "Young Chicken",
       speed: 14,
       scare: 1
     }
 
-    var chicken3Options = {
+    var chickenThreeOptions = {
       name: "Anime Chicken",
       speed: 10,
       scare: 2
     }
 
-    var chicken4Options = {
+    var chickenFourOptions = {
       name: "Average Chicken",
       speed: 8,
       scare: 2
     }
 
-    chicken1 = new Chicken(chicken1Options);
-    var chicken2 = new Chicken(chicken2Options);
-    var chicken3 = new Chicken(chicken3Options);
-    var chicken4 = new Chicken(chicken4Options);
+    chicken1 = new Chicken(chickenOneOptions);
+    var chicken2 = new Chicken(chickenTwoOptions);
+    var chicken3 = new Chicken(chickenThreeOptions);
+    var chicken4 = new Chicken(chickenFourOptions);
 
     chickens = [chicken1, chicken2, chicken3, chicken4]
 

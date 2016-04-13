@@ -1,3 +1,4 @@
+require("babel-register");
 require('../extensions/array.js')
 
 describe("Array", function() {

@@ -1,3 +1,4 @@
+require("babel-register");
 var Chicken = require("../chicken.js")
 
 describe("Chicken", function() {
@@ -5,7 +6,7 @@ describe("Chicken", function() {
   var chicken;
 
   beforeEach(function() {
-    options = {
+    var options = {
       name: "Old Chicken",
       speed: 5,
       scare: 3

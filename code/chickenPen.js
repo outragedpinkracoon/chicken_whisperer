@@ -1,5 +1,3 @@
-"use strict"
-
 class ChickenPen {
 
   constructor(chickens){
@@ -18,7 +16,7 @@ class ChickenPen {
   //TODO why does lodash not work with _.remove? halp.
   remove(chicken_out) {
     var result = [];
-    for(chicken of this.chickens)
+    for(var chicken of this.chickens)
     {
       if(chicken !== chicken_out)
         result.push(chicken);

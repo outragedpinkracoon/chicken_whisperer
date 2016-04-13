@@ -3,42 +3,45 @@ var ChickenPen = require("../chickenPen.js")
 
 describe("Chicken Pen", function() {
 
-  var chickenPen;
+  var player;
+  var chicken1;
   var chickens;
-  var chicken_1;
+  var chickenPen;
 
   beforeEach(function() {
 
-    var chicken1_options = {
+    var chickenOneOptions = {
       name: "Old Chicken",
       speed: 5,
       scare: 3
     }
 
-    var chicken2_options = {
+    var chickenTwoOptions = {
       name: "Young Chicken",
       speed: 14,
       scare: 1
     }
 
-    var chicken3_options = {
+    var chickenThreeOptions = {
       name: "Anime Chicken",
       speed: 10,
       scare: 2
     }
 
-    var chicken4_options = {
+    var chickenFourOptions = {
       name: "Average Chicken",
       speed: 8,
       scare: 2
     }
 
-    chicken_1 = new Chicken(chicken1_options);
-    var chicken_2 = new Chicken(chicken2_options);
-    var chicken_3 = new Chicken(chicken3_options);
-    var chicken_4 = new Chicken(chicken4_options);
+    chicken1 = new Chicken(chickenOneOptions);
+    var chicken2 = new Chicken(chickenTwoOptions);
+    var chicken3 = new Chicken(chickenThreeOptions);
+    var chicken4 = new Chicken(chickenFourOptions);
 
-    chickens = [chicken_1, chicken_2, chicken_3, chicken_4]
+    chickens = [chicken1, chicken2, chicken3, chicken4]
+
+    chickenPen = new ChickenPen(chickens);
  
   });
 
@@ -47,21 +50,21 @@ describe("Chicken Pen", function() {
   });
 
   it("should have 4 chickens", function() {
-    chickenPen = new ChickenPen(chickens);
+    var chickenPen = new ChickenPen(chickens);
     expect(chickenPen.count()).toBe(4);
   });
 
   it("should add a chicken", function() {
-    chickenPen = new ChickenPen(chickens);
-    chicken = new Chicken({name:"Shiny"});
+    var chickenPen = new ChickenPen(chickens);
+    var chicken = new Chicken({name:"Shiny"});
     chickenPen.add(chicken);
     expect(chickenPen.count()).toBe(5);
   });
 
   it("should remove a chicken", function() {
-    chickenPen = new ChickenPen(chickens);
+    var chickenPen = new ChickenPen(chickens);
 
-    chickenPen.remove(chicken_1);
+    chickenPen.remove(chicken1);
     expect(chickenPen.count()).toBe(3);
   });
 
