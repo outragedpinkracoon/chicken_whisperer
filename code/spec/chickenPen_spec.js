@@ -73,6 +73,7 @@ describe("Chicken Pen", function() {
     var chickenPen = new ChickenPen(chickens);
 
     chickenPen.scareChickens();
+    
     expect(chickenPen.chickens[0].speed).toBe(4);
     expect(chickenPen.chickens[1].speed).toBe(13);
     expect(chickenPen.chickens[2].speed).toBe(9);

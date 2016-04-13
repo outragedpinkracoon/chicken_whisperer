@@ -16,7 +16,6 @@ class ChickenPen {
     this.chickens.push(chicken);
   }
 
-  //TODO why does lodash not work with _.remove? halp.
   remove(chicken_out) {
     var result = [];
     for(var chicken of this.chickens)

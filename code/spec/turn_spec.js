@@ -94,5 +94,17 @@ describe("Turn", function(){
     expect(turn.diceCollection.captureDice).toBe(1);
   });
 
+  it("scares chickens on odd roll", function(){
+    spyOn(turn.diceCollection.die, "roll").and.returnValues(1, 2);
+    
+    turn.approachChicken();
+
+    expect(turn.diceCollection.captureDice).toBe(0);
+
+    expect(chickenPen.chickens[1].speed).toBe(13);
+    expect(chickenPen.chickens[2].speed).toBe(9);
+    expect(chickenPen.chickens[3].speed).toBe(7);
+  });
+
 });
 
