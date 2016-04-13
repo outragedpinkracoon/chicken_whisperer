@@ -1,7 +1,8 @@
 "use strict"
 
 class DiceCollection {
-  constructor(die, numberOfApproachDice) {
+
+  constructor(die, numberOfApproachDice = 2) {
     this.die = die;
     if(numberOfApproachDice === undefined)
       this.approachDice = 2

@@ -1,3 +1,4 @@
+require("babel-core").transform("code");
 var Player = require("../player.js")
 var Turn = require("../turn.js")
 var Chicken = require("../chicken.js")
@@ -7,40 +8,44 @@ var DiceCollection = require("../diceCollection.js")
 
 describe("Turn", function(){
   var player;
+  var chicken1;
+  var chickens;
+  var chickenPen;
+  var turn;
 
   beforeEach(function(){
     player = new Player("Valerie");
 
-    var chicken1_options = {
+    var chicken1Options = {
       name: "Old Chicken",
       speed: 5,
       scare: 3
     }
 
-    var chicken2_options = {
+    var chicken2Options = {
       name: "Young Chicken",
       speed: 14,
       scare: 1
     }
 
-    var chicken3_options = {
+    var chicken3Options = {
       name: "Anime Chicken",
       speed: 10,
       scare: 2
     }
 
-    var chicken4_options = {
+    var chicken4Options = {
       name: "Average Chicken",
       speed: 8,
       scare: 2
     }
 
-    chicken_1 = new Chicken(chicken1_options);
-    var chicken_2 = new Chicken(chicken2_options);
-    var chicken_3 = new Chicken(chicken3_options);
-    var chicken_4 = new Chicken(chicken4_options);
+    chicken1 = new Chicken(chicken1Options);
+    var chicken2 = new Chicken(chicken2Options);
+    var chicken3 = new Chicken(chicken3Options);
+    var chicken4 = new Chicken(chicken4Options);
 
-    chickens = [chicken_1, chicken_2, chicken_3, chicken_4]
+    chickens = [chicken1, chicken2, chicken3, chicken4]
 
     chickenPen = new ChickenPen(chickens);
 

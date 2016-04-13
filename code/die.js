@@ -2,7 +2,7 @@
 
 class Die {
 
-  constructor(sides) {
+  constructor(sides = 6) {
     this.sides = sides !== undefined ? sides : 6;
   }
 
