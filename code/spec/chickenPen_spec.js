@@ -1,7 +1,8 @@
 require("babel-register");
+var ChickenData = require("./data/chickenData.js")
 var Chicken = require("../chicken.js")
 var ChickenPen = require("../chickenPen.js")
-var ChickenData = require("./chickenData.js")
+
 
 describe("Chicken Pen", function() {
 
