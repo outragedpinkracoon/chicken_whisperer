@@ -1,5 +1,5 @@
 require("babel-register");
-require("../extensions/number.js")
+require("../../extensions/number.js")
 
 describe("Number", function(){
 
