@@ -3,11 +3,10 @@ var Dice = require("./die.js")
 
 class CaptureTurn {
 
-  constructor(player, chickenPen, approach){
+  constructor(player, approach){
     this.player = player;
-    this.chickenPen = chickenPen;
-    this.finished = false;
     this.approach = approach;
+    this.finished = false;
   }
 
   approachChicken(){

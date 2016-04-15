@@ -18,10 +18,8 @@ describe("Capture Turn", function(){
 
   beforeEach(function(){
     player = new Player("Valerie");
-    var diceCollection = new DiceCollection(new Die());
-    data = new ChickenData();
     approach = new Approach();
-    turn = new CaptureTurn(player, data.chickenPen, approach);
+    turn = new CaptureTurn(player, approach);
   });
 
   it("should have an approach", function(){
@@ -32,9 +30,6 @@ describe("Capture Turn", function(){
     expect(turn.player).toEqual(player);
   });
 
-  it("should have chicken pen", function(){
-    expect(turn.chickenPen).toEqual(data.chickenPen);
-  });
 
   it("does not start finished", function(){
     expect(turn.finished).toBe(false);
