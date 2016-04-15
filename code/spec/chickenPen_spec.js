@@ -11,10 +11,6 @@ describe("Chicken Pen", function() {
     data = new ChickenData();
   });
 
-  it("should throw error with no chickens", function() {
-    expect(function() { new ChickenPen() }).toThrow(new Error("Must have chickens"));
-  });
-
   it("should have 4 chickens", function() {
     expect(data.chickenPen.count()).toBe(4);
   });

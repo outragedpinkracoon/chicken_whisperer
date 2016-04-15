@@ -5,71 +5,39 @@ var Player = require("../player.js")
 var CaptureTurn = require("../captureTurn.js")
 var Chicken = require("../chicken.js")
 var ChickenPen = require("../chickenPen.js")
+var ChickenPen = require("../chickenPen.js")
 var Die = require("../die.js")
+var Approach = require("../approach.js")
 var DiceCollection = require("../diceCollection.js")
 
-describe("Catpure Turn", function(){
+describe("Capture Turn", function(){
   var player;
   var data;
   var turn;
+  var approach;
 
   beforeEach(function(){
     player = new Player("Valerie");
     var diceCollection = new DiceCollection(new Die());
     data = new ChickenData();
+    approach = new Approach();
+    turn = new CaptureTurn(player, data.chickenPen, approach);
+  });
 
-    turn = new CaptureTurn(player, data.chickenPen, diceCollection);
-  })
+  it("should have an approach", function(){
+    expect(turn.approach).toEqual(approach);
+  });
 
   it("should have player", function(){
     expect(turn.player).toEqual(player);
-  })
+  });
 
   it("should have chicken pen", function(){
     expect(turn.chickenPen).toEqual(data.chickenPen);
-  })
-
-  it("should throw error with no players", function() {
-    expect(function(){ new CaptureTurn(); }).toThrow(new Error("Turn must have player"));
-  });
-
-  it("should throw error with no chicken pen", function() {
-    expect(function(){ new CaptureTurn(player); }).toThrow(new Error("Turn must have chicken pen"));
   });
 
   it("does not start finished", function(){
     expect(turn.finished).toBe(false);
-  });
-
-  it("starts with 0 capture dice", function(){
-    expect(turn.diceCollection.captureDice).toEqual(0);
-  });
-
-  it("starts with 2 approach dice", function(){
-    expect(turn.diceCollection.approachDice).toBe(2);
-  });
-
-  it("returns approach dice roll", function(){
-    spyOn(turn.diceCollection.die, "roll").and.returnValues(1, 1);
-    var result = turn.approachRoll();
-    expect(result).toBe(2);
-  });
-
-  it("gains a capture dice on even roll", function(){
-    spyOn(turn.diceCollection.die, "roll").and.returnValues(1, 1);
-    turn.approachChicken();
-    expect(turn.diceCollection.captureDice).toBe(1);
-  });
-
-  it("scares chickens on odd roll", function(){
-    spyOn(turn.diceCollection.die, "roll").and.returnValues(1, 2);
-    spyOn(turn.chickenPen, "scareChickens");
-
-    turn.approachChicken();
-
-    expect(turn.diceCollection.captureDice).toBe(0);
-
-    expect(turn.chickenPen.scareChickens).toHaveBeenCalled();
   });
 
 });

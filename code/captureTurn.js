@@ -3,40 +3,15 @@ var Dice = require("./die.js")
 
 class CaptureTurn {
 
-  constructor(player, chickenPen, diceCollection){
-    if (player === undefined) {
-      throw new Error("Turn must have player");
-    }
-
-    if (chickenPen === undefined) {
-      throw new Error("Turn must have chicken pen");
-    } 
-    
+  constructor(player, chickenPen, approach){
     this.player = player;
     this.chickenPen = chickenPen;
     this.finished = false;
-    this.diceCollection = diceCollection;
+    this.approach = approach;
   }
 
   approachChicken(){
-    var result = this.approachRoll();
-    
-    if(result.isEven()){
-      this.diceCollection.addCaptureDie();
-      return;
-    }
-    this.chickenPen.scareChickens();
-  }
-  
-  approachRoll(){
-    var result = 0;
-    var limit = this.diceCollection.approachDice;
-
-    for(var i = 0; i < limit; i++) {
-      result += this.diceCollection.die.roll();
-    }
-
-    return result;
+    approach.step();
   }
 
 }

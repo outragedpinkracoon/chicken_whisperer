@@ -28,15 +28,6 @@ describe("Game", function() {
     expect(game.chickenPen).not.toBeUndefined;
   });
 
-  it("should throw error with no players", function() {
-    expect(function(){ new Game(); }).toThrow(new Error("Game must have players"));
-  });
-
-  it("should throw error with no chicken pen", function() {
-    expect(function(){ new Game([]); }).toThrow(new Error("Game must have chicken pen"));
-  });
-
-
   it("should have 2 players", function() {
     expect(game.playerCount()).toBe(2);
   });

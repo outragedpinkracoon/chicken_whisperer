@@ -2,11 +2,7 @@ var _ = require('lodash');
 
 class ChickenPen {
 
-  constructor(chickens){
-    if(!chickens) {
-      throw new Error("Must have chickens");
-    }
-    
+  constructor(chickens){    
     this.chickens = chickens;
   }
 
