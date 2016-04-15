@@ -16,7 +16,7 @@ describe("Catpure Turn", function(){
   beforeEach(function(){
     player = new Player("Valerie");
     var diceCollection = new DiceCollection(new Die());
-    var data = new ChickenData();
+    data = new ChickenData();
 
     turn = new CaptureTurn(player, data.chickenPen, diceCollection);
   })
@@ -26,7 +26,7 @@ describe("Catpure Turn", function(){
   })
 
   it("should have chicken pen", function(){
-    expect(turn.player).toEqual(player);
+    expect(turn.chickenPen).toEqual(data.chickenPen);
   })
 
   it("should throw error with no players", function() {
