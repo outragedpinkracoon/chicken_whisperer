@@ -13,6 +13,10 @@ class CaptureTurn {
     approach.step();
   }
 
+  attemptCapture(){
+    capture.attempt(approach.die,diceCollection.captureDice)
+  }
+
 }
 
 module.exports = CaptureTurn;

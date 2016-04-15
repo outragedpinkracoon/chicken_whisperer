@@ -1,7 +1,8 @@
 class Approach {
-  constructor(diceCollection,chickenPen){
+  constructor(die,diceCollection,chickenPen){
     this.chickenPen = chickenPen;
     this.diceCollection = diceCollection;
+    this.die = die;
   }
 
   step(){
@@ -19,7 +20,7 @@ class Approach {
     var limit = this.diceCollection.approachDice;
 
     for(var i = 0; i < limit; i++) {
-      result += this.diceCollection.die.roll();
+      result += this.die.roll();
     }
 
     return result;

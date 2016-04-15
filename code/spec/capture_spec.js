@@ -1,0 +1,1 @@
+var Capture = require("../capture.js")

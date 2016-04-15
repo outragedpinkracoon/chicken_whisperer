@@ -1,19 +1,12 @@
 require("babel-register");
 var DiceCollection = require('../diceCollection.js')
-var Die = require('../die.js');
 
 describe("Dice Collection", function() {
 
-  var die;
   var diceCollection;
 
   beforeEach(function(){
-    die = new Die();
-    diceCollection = new DiceCollection(die);
-  });
-
-  it("should have a die", function() {
-    expect(diceCollection.die).toEqual(die);
+    diceCollection = new DiceCollection();
   });
 
   it("should start with no capture dice", function() {
@@ -25,7 +18,7 @@ describe("Dice Collection", function() {
   });
 
   it("should start with 4 approach dice", function() {
-    diceCollection = new DiceCollection(die, 4);
+    diceCollection = new DiceCollection(4);
     expect(diceCollection.approachDice).toBe(4);
   });
 

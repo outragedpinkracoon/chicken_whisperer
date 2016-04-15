@@ -1,7 +1,6 @@
 class DiceCollection {
 
-  constructor(die, numberOfApproachDice = 2) {
-    this.die = die;
+  constructor(numberOfApproachDice = 2) {
     this.approachDice = numberOfApproachDice
     this.captureDice = 0
   }
