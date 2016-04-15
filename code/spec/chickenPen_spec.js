@@ -5,7 +5,8 @@ var ChickenPen = require("../chickenPen.js")
 
 
 describe("Chicken Pen", function() {
-
+  var data;
+  
   beforeEach(function() {
     data = new ChickenData();
   });

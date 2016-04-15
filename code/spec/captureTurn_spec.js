@@ -2,25 +2,23 @@ require("babel-register");
 
 var ChickenData = require("./data/chickenData.js")
 var Player = require("../player.js")
-var Turn = require("../turn.js")
+var CaptureTurn = require("../captureTurn.js")
 var Chicken = require("../chicken.js")
 var ChickenPen = require("../chickenPen.js")
 var Die = require("../die.js")
 var DiceCollection = require("../diceCollection.js")
 
-describe("Turn", function(){
+describe("Catpure Turn", function(){
   var player;
   var data;
   var turn;
 
   beforeEach(function(){
     player = new Player("Valerie");
-
     var diceCollection = new DiceCollection(new Die());
-
     var data = new ChickenData();
 
-    turn = new Turn(player, data.chickenPen, diceCollection);
+    turn = new CaptureTurn(player, data.chickenPen, diceCollection);
   })
 
   it("should have player", function(){
@@ -32,11 +30,11 @@ describe("Turn", function(){
   })
 
   it("should throw error with no players", function() {
-    expect(function(){ new Turn(); }).toThrow(new Error("Turn must have player"));
+    expect(function(){ new CaptureTurn(); }).toThrow(new Error("Turn must have player"));
   });
 
   it("should throw error with no chicken pen", function() {
-    expect(function(){ new Turn(player); }).toThrow(new Error("Turn must have chicken pen"));
+    expect(function(){ new CaptureTurn(player); }).toThrow(new Error("Turn must have chicken pen"));
   });
 
   it("does not start finished", function(){

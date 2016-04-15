@@ -1,3 +1,5 @@
+var _ = require('lodash');
+
 class ChickenPen {
 
   constructor(chickens){

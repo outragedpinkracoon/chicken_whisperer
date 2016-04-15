@@ -1,7 +1,7 @@
 require("./extensions/number.js")
 var Dice = require("./die.js")
 
-class Turn {
+class CaptureTurn {
 
   constructor(player, chickenPen, diceCollection){
     if (player === undefined) {
@@ -41,4 +41,4 @@ class Turn {
 
 }
 
-module.exports = Turn;
+module.exports = CaptureTurn;

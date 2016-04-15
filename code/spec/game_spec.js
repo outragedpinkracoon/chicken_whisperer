@@ -8,6 +8,7 @@ var ChickenPen = require('../chickenPen.js')
 describe("Game", function() {
 
   var game;
+  var data;
 
   beforeEach(function() {
 
@@ -16,7 +17,7 @@ describe("Game", function() {
 
     var players = [player1, player2];
 
-    var chickenData = new ChickenData();
+    data = new ChickenData();
 
     game = new Game(players, data.chickenPen);
 
