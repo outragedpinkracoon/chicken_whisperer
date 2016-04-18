@@ -13,16 +13,11 @@ var Die = require("../die.js")
 describe("Approach", function(){
   var data;
   var approach;
-  var die;
 
   beforeEach(function(){
-    var diceCollection = new DiceCollection();
     data = new ChickenData();
-    die = new Die();
 
     var options = {
-      die: die,
-      diceCollection: diceCollection,
       chickenPen: data.chickenPen
     }
     
@@ -30,7 +25,7 @@ describe("Approach", function(){
   });
 
   it("should have a die", function() {
-    expect(approach.die).toEqual(die);
+    expect(approach.die).not.toBe(null);
   });
 
   it("starts with 0 capture dice", function(){

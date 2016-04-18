@@ -1,9 +1,12 @@
+var DiceCollection = require('./diceCollection.js');
+var Die = require('./die.js');
+
 class Approach {
   
   constructor(options){
     this.chickenPen = options.chickenPen;
-    this.diceCollection = options.diceCollection;
-    this.die = options.die;
+    this.diceCollection = new DiceCollection();
+    this.die = new Die();
   }
 
   step(){

@@ -1,21 +1,23 @@
 require("./extensions/number.js")
+var Approach = require('./approach.js');
+var Capture = require('./capture.js');
 
 class CaptureTurn {
 
   constructor(options){
     this.player = options.player;
-    this.approach = options.approach;
-    this.capture = options.capture;
+    this.approach = new Approach( {chickenPen: this.chickenPen} );
+    this.capture = new Capture();
 
     this.finished = false;
   }
 
   approachChicken(){
-    return approach.step();
+    return this.approach.step();
   }
 
   attemptCapture(chicken){
-    return capture.attempt();
+    return this.capture.attempt();
   }
 
 }

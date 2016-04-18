@@ -4,6 +4,7 @@ var CaptureGame = require('../captureGame.js')
 var Player = require('../player.js')
 var Chicken = require('../chicken.js')
 var ChickenPen = require('../chickenPen.js')
+var ApproachStatus = require('../approachStatus.js')
 
 describe("Game", function() {
 
@@ -57,6 +58,13 @@ describe("Game", function() {
   it("should start with player 1 turn", function() {
     game.nextTurn();
     expect(game.turn.player.name).toBe("Valerie");
+  });
+
+  it("should return success status when populated chicken pen approached", function(){
+    game.nextTurn();
+    var result = game.approachChicken();
+    spyOn(data.chickenPen,"hasChickens").and.returnValues(true);
+    expect(result.status).toEqual(ApproachStatus.CHICKEN_PEN_APPROACHED);
   });
 
 });
