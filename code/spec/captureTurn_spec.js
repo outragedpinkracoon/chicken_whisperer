@@ -19,9 +19,16 @@ describe("Capture Turn", function(){
 
   beforeEach(function(){
     player = new Player("Valerie");
-    approach = new Approach();
+    approach = new Approach({});
     capture = new Capture();
-    turn = new CaptureTurn(player, approach, capture);
+
+    var options = {
+      player: player,
+      approach: approach,
+      capture: capture
+    }
+
+    turn = new CaptureTurn(options);
   });
 
   it("should have an approach", function(){

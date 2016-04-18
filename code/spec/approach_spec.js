@@ -19,7 +19,14 @@ describe("Approach", function(){
     var diceCollection = new DiceCollection();
     data = new ChickenData();
     die = new Die();
-    approach = new Approach(die, diceCollection, data.chickenPen);
+
+    var options = {
+      die: die,
+      diceCollection: diceCollection,
+      chickenPen: data.chickenPen
+    }
+    
+    approach = new Approach(options);
   });
 
   it("should have a die", function() {

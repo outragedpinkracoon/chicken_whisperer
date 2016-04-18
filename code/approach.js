@@ -1,8 +1,9 @@
 class Approach {
-  constructor(die,diceCollection,chickenPen){
-    this.chickenPen = chickenPen;
-    this.diceCollection = diceCollection;
-    this.die = die;
+  
+  constructor(options){
+    this.chickenPen = options.chickenPen;
+    this.diceCollection = options.diceCollection;
+    this.die = options.die;
   }
 
   step(){

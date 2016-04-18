@@ -8,7 +8,6 @@ class Game {
     this.chickenPen = chickenPen;
     this.currentPlayer = players[0];
     this.turn = null;
-    this.nextTurn();
   }
 
   updateCurrentPlayer() {
@@ -24,9 +23,15 @@ class Game {
   }
 
   nextTurn(){
-    if(this.turn !== null)
-      this.updateCurrentPlayer();
-    this.turn = new CaptureTurn(this.currentPlayer, this.chickenPen);
+    this.turn !== null ? this.updateCurrentPlayer() : this.firstTurn();
+  }
+
+  firstTurn(){
+    var options = {
+      player: this.currentPlayer,
+      chickenPen: this.chickenPen
+    }
+    this.turn = new CaptureTurn(options);
   }
 
 }
