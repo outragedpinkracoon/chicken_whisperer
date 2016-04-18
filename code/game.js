@@ -6,12 +6,14 @@ class Game {
   constructor(options) {
     this.players = options.players;
     this.chickenPen = options.chickenPen;
-
-    this.currentPlayer = this.players[0];
     this.turn = null;
   }
 
   updateCurrentPlayer() {
+    if(this.currentPlayer === undefined) {
+      this.currentPlayer = this.players[0];
+      return;
+    }
     this.currentPlayer = this.players.rotate().first();
   }
 
@@ -19,17 +21,13 @@ class Game {
     return this.players.length;
   }
 
-  currentTurn(){
-    return this.turn;
-  }
-
   nextTurn(){
+    this.updateCurrentPlayer();
     var options = {
       player: this.currentPlayer,
       chickenPen: this.chickenPen
     }
     this.turn = new CaptureTurn(options);
-    this.updateCurrentPlayer();
   }
 
 }

@@ -38,11 +38,13 @@ describe("Game", function() {
   });
 
   it("should have player1 as first player", function() {
+    game.nextTurn();
     expect(game.currentPlayer.name).toBe("Valerie");
   });
 
   it("should update player", function() {
-    game.updateCurrentPlayer()
+    game.updateCurrentPlayer();
+    game.updateCurrentPlayer();
     expect(game.currentPlayer.name).toBe("Jay");
   });
 
@@ -50,12 +52,11 @@ describe("Game", function() {
     expect(game.turn).toBe(null);
     game.nextTurn();
     expect(game.turn).not.toBe(null);
-  })
+  });
 
   it("should start with player 1 turn", function() {
     game.nextTurn();
-    expect(game.currentTurn().player.name).toBe("Valerie");
+    expect(game.turn.player.name).toBe("Valerie");
   });
-
 
 });
