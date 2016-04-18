@@ -5,13 +5,15 @@ class Capture{
   }
 
   attempt(player, chicken, chickenPen, captureDice){
-    var result = this.captureRoll(captureDice);
-
-    if(this.successfulRoll(result, chicken)) {
-      return this.success(chickenPen, player, chicken);
+    var roll = this.captureRoll(captureDice);
+    var result;
+    
+    if(this.successfulRoll(roll, chicken)) {
+      result = this.success(chickenPen, player, chicken);
     } else {
-      return this.failure(chicken)
+      result = this.failure(chicken)
     }
+    return result;
   }
 
   successfulRoll(result, chicken){
