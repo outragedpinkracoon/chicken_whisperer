@@ -1,6 +1,6 @@
 require("babel-register");
 var ChickenData = require('./data/chickenData.js')
-var Game = require('../game.js')
+var CaptureGame = require('../captureGame.js')
 var Player = require('../player.js')
 var Chicken = require('../chicken.js')
 var ChickenPen = require('../chickenPen.js')
@@ -24,7 +24,7 @@ describe("Game", function() {
       chickenPen: data.chickenPen
     }
 
-    game = new Game(options);
+    game = new CaptureGame(options);
 
   });
 

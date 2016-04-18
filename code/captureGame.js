@@ -1,7 +1,7 @@
 require("./extensions/array.js")
 var CaptureTurn = require("./captureTurn.js")
 
-class Game {
+class CaptureGame {
 
   constructor(options) {
     this.players = options.players;
@@ -31,9 +31,12 @@ class Game {
   }
 
   approachChicken(){
-    var success = this.turn.approachChicken();
+    if(chickenPen.hasChickens())
+    {
+      this.turn.approachChicken();
+    }
   }
 
 }
 
-module.exports = Game;
+module.exports = CaptureGame;
