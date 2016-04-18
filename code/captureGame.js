@@ -37,10 +37,7 @@ class CaptureGame {
   }
 
   approachChicken(){
-    if(this.chickenPen.hasChickens())
-    {
-      this.turn.approachChicken()
-    }
+    this.turn.approachChicken();
   }
 
 }

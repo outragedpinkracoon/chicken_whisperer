@@ -31,7 +31,10 @@ describe("Chicken Pen", function() {
   });
 
   it("should not have Chickens", function() {
-    data.chickenPen.chickens = [];
+    data.chickenPen.chickens[0].speed = 0;
+    data.chickenPen.chickens[1].speed = 0;
+    data.chickenPen.chickens[2].speed = 0;
+    data.chickenPen.chickens[3].speed = 0;
     expect(data.chickenPen.hasChickens()).toBe(false);
   });
 
