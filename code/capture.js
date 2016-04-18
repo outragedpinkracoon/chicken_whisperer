@@ -21,7 +21,7 @@ class Capture{
   }
 
   failure(chicken){
-    chicken.scare();
+    chicken.reduceSpeed();
     return false;
   }
 

@@ -27,6 +27,7 @@ class CaptureGame {
 
   nextTurn(){
     this.updateCurrentPlayer();
+    this.chickenPen.refresh();
 
     var options = {
       player: this.currentPlayer,

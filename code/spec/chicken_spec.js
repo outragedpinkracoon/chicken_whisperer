@@ -22,23 +22,27 @@ describe("Chicken", function() {
     expect(chicken.speed).toBe(5);
   });
 
+  it("should have a max speed", function() {
+    expect(chicken.maxSpeed).toBe(5);
+  });
+
   it("should have a max scare value", function() {
     expect(chicken.maxScare).toBe(3);
   });
 
-  it("should decrease speed by 1", function() {
-    chicken.scare();
-    expect(chicken.speed).toBe(4);
+  it("should decrease scare by 1", function() {
+    chicken.reduceScare();
+    expect(chicken.scare).toBe(2);
   });
 
   it("should decrease speed by 2", function() {
-    chicken.scare(2);
+    chicken.reduceSpeed(2);
     expect(chicken.speed).toBe(3);
   });
 
   it("should not decrease speed below 0", function() {
     chicken.speed = 0;
-    chicken.scare();
+    chicken.reduceSpeed();
     expect(chicken.speed).toBe(0);
   });
 

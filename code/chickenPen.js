@@ -21,6 +21,11 @@ class ChickenPen {
     return false;
   }
 
+  refresh(){
+    this.chickens.map( (item) => item.speed = item.maxSpeed );
+    this.chickens.map( (item) => item.scare = item.maxScare );
+  }
+
   remove(chicken_out) {
     var result = [];
     for(var chicken of this.chickens)
@@ -33,7 +38,7 @@ class ChickenPen {
 
   scareChickens(){
     this.chickens.forEach(function(chicken, index){
-      chicken.scare();
+      chicken.reduceScare();
     });
   }
 

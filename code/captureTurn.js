@@ -17,10 +17,7 @@ class CaptureTurn {
   }
 
   approachChicken(){
-    if(this.valid())
-    {
-      this.approach.step();
-    }
+    if(this.valid()) this.approach.step();
   }
 
   valid(){

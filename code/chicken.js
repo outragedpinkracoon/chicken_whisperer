@@ -20,9 +20,16 @@ class Chicken {
     this.name = options.name;
     this.speed = options.speed;
     this.maxScare = options.maxScare;
+    this.maxSpeed = options.speed;
+    this.scare = options.maxScare;
   }
 
-  scare(value = 1){
+  reduceScare(value = 1){
+    if(this.scare === 0) return;
+    this.scare = this.scare - value;
+  }
+
+  reduceSpeed(value = 1){
     if(this.speed === 0) return;
     this.speed = this.speed - value;
   }
