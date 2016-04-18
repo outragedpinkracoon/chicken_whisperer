@@ -42,7 +42,7 @@ class CaptureGame {
       return {
         message: "You approached the chickens",
         status: ApproachStatus.CHICKEN_PEN_APPROACHED,
-        result: this.turn.approachChicken()
+        data: this.turn.approachChicken()
       }
     }
     return {
