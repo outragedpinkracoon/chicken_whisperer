@@ -9,12 +9,8 @@ class Capture{
   }
 
   captureRoll(captureDice) {
-    var result = 0;
-    for(var i = 0; i < captureDice; i++)
-    {
-      result += this.die.roll();
-    }
-    return result;
+    var times = captureDice;
+    return this.die.rollMultiple(times);
   }
 }
 

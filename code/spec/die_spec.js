@@ -16,14 +16,14 @@ describe("Die", function(){
 
   it("should return the roll results added together", function(){
     spyOn(die, "roll").and.returnValues(1,1);
-    result = die.rollMultiple(2);
+    var result = die.rollMultiple(2);
     expect(result).toBe(2);
   });
 
   it("should roll twice and return callback result", function(){
     spyOn(die, "roll").and.returnValues(1,2);
-    func = (x,y) => x * y;
-    die.rollMultiple(2, func);
+    var func = (x,y) => x * y;
+    var result = die.rollMultiple(2, func);
     expect(result).toBe(2);
   });
 

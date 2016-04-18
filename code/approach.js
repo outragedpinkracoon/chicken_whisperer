@@ -16,14 +16,8 @@ class Approach {
   }
 
   approachRoll(){
-    var result = 0;
-    var limit = this.diceCollection.approachDice;
-
-    for(var i = 0; i < limit; i++) {
-      result += this.die.roll();
-    }
-
-    return result;
+    var times = this.diceCollection.approachDice;
+    return this.die.rollMultiple(times);
   }
 } 
 
