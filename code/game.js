@@ -24,15 +24,12 @@ class Game {
   }
 
   nextTurn(){
-    this.turn !== null ? this.updateCurrentPlayer() : this.firstTurn();
-  }
-
-  firstTurn(){
     var options = {
       player: this.currentPlayer,
       chickenPen: this.chickenPen
     }
     this.turn = new CaptureTurn(options);
+    this.updateCurrentPlayer();
   }
 
 }
