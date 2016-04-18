@@ -14,7 +14,6 @@ describe("Player", function() {
       maxScare: 3
     }
     chicken = new Chicken(options);
-
     player = new Player("Valerie");
   });
 

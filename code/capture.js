@@ -5,7 +5,9 @@ class Capture{
   }
 
   attempt(player, chicken, captureDice){
-    var result = captureRoll(captureDice);
+    var result = this.captureRoll(captureDice);
+    if(result < chicken.speed)
+      chicken.scare();
   }
 
   captureRoll(captureDice) {
