@@ -37,12 +37,14 @@ describe("Approach", function(){
   it("returns approach dice roll", function(){
     spyOn(approach.die, "roll").and.returnValues(1, 1);
     var result = approach.approachRoll();
+
     expect(result).toBe(2);
   });
 
   it("gains a capture dice on even roll", function(){
     spyOn(approach.die, "roll").and.returnValues(1, 1);
     var result = approach.step();
+
     expect(result).toBe(true);
     expect(approach.diceCollection.captureDice).toBe(1);
   });
