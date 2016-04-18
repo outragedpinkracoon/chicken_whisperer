@@ -14,26 +14,21 @@ describe("Capture Turn", function(){
   var player;
   var data;
   var turn;
-  var approach;
-  var capture;
 
   beforeEach(function(){
     player = new Player("Valerie");
-    approach = new Approach({});
-    capture = new Capture();
     data = new ChickenData();
 
     var options = {
       player: player,
-      approach: approach,
-      capture: capture
+      chickenPen: data.chickenPen
     }
 
     turn = new CaptureTurn(options);
   });
 
   it("should have an approach", function(){
-    expect(turn.approach).toEqual(approach);
+    expect(turn.approach).not.toBe(null);
   });
 
   it("should have player", function(){
@@ -41,7 +36,7 @@ describe("Capture Turn", function(){
   });
 
   it("should have capture", function(){
-    expect(turn.capture).toEqual(capture);
+    expect(turn.capture).not.toBe(null);
   });
   
   it("does not start finished", function(){
