@@ -22,8 +22,9 @@ class ChickenPen {
   }
 
   refresh(){
-    this.chickens.map( (item) => item.speed = item.maxSpeed );
-    this.chickens.map( (item) => item.scare = item.maxScare );
+    this.chickens.forEach(function(chicken){
+      chicken.refresh();
+    })
   }
 
   remove(chicken_out) {

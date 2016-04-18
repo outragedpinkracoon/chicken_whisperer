@@ -46,5 +46,15 @@ describe("Chicken", function() {
     expect(chicken.speed).toBe(0);
   });
 
+  it("should refresh speed and scare", function(){
+    chicken.speed = 0;
+    chicken.scare = 0;
+
+    chicken.refresh();
+    
+    expect(chicken.speed).toBe(5);
+    expect(chicken.scare).toBe(3);
+  });
+
 
 });

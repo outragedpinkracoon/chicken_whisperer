@@ -34,6 +34,11 @@ class Chicken {
     this.speed = this.speed - value;
   }
 
+  refresh(){
+    this.speed = this.maxSpeed;
+    this.scare = this.maxScare
+  }
+
 
   
 }
