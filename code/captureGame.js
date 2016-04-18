@@ -39,15 +39,7 @@ class CaptureGame {
   approachChicken(){
     if(this.chickenPen.hasChickens())
     {
-      return {
-        message: "You approached the chickens",
-        status: ApproachStatus.CHICKEN_PEN_APPROACHED,
-        data: this.turn.approachChicken()
-      }
-    }
-    return {
-      message: "There are no chickens to approach",
-      status: ApproachStatus.NO_CHICKENS_IN_PEN
+      this.turn.approachChicken()
     }
   }
 

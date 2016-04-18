@@ -13,7 +13,12 @@ class ChickenPen {
   }
 
   hasChickens(){
-    return this.count() > 0;
+    for(var chicken of this.chickens)
+    {
+      if(chicken.speed > 0)
+        return true;
+    }
+    return false;
   }
 
   remove(chicken_out) {

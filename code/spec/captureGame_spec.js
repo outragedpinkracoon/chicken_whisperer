@@ -60,33 +60,4 @@ describe("Game", function() {
     expect(game.turn.player.name).toBe("Valerie");
   });
 
-  it("should return correct status when populated chicken pen approached", function(){
-    spyOn(data.chickenPen,"hasChickens").and.returnValues(true);
-
-    game.nextTurn();
-    var result = game.approachChicken();
-    
-    expect(result.status).toEqual(ApproachStatus.CHICKEN_PEN_APPROACHED);
-  });
-
-  it("should return correct status when empty chicken pen approached", function(){
-    spyOn(data.chickenPen,"hasChickens").and.returnValues(false);
-
-    game.nextTurn();
-    var result = game.approachChicken();
-
-    expect(result.status).toEqual(ApproachStatus.NO_CHICKENS_IN_PEN);
-  });
-
-  it("should return result when populated chicken pen approached", function(){
-    spyOn(data.chickenPen,"hasChickens").and.returnValues(true);
-
-    game.nextTurn();
-
-    spyOn(game.turn,"approachChicken").and.returnValues(true);
-    var result = game.approachChicken();
-
-    expect(result.data).toEqual(true);
-  });
-
 });
