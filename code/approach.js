@@ -10,9 +10,10 @@ class Approach {
     
     if(result.isEven()){
       this.diceCollection.addCaptureDie();
-      return;
+      return true;
     }
     this.chickenPen.scareChickens();
+    return false;
   }
 
   approachRoll(){

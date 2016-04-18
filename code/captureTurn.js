@@ -10,19 +10,12 @@ class CaptureTurn {
   }
 
   approachChicken(){
-    approach.step();
+    return approach.step();
   }
 
-  // attemptCapture(chicken){
-  //   var captureDice = this.approach.diceCollection.captureDice;
-  //   if (this.capture.tryToCatch(chicken, captureDice)){
-  //     // yay you caught a chicken
-  //   }
-  //   else {
-  //     // oh no your turn is ended
-  //   }
-
-  // }
+  attemptCapture(chicken){
+    return capture.attempt();
+  }
 
 }
 

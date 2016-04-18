@@ -4,10 +4,18 @@ class Capture{
     this.die = die;
   }
 
-  attempt(player, chicken, captureDice){
+  attempt(player, chicken, chickenPen, captureDice){
     var result = this.captureRoll(captureDice);
-    if(result < chicken.speed)
+    
+    if(result < chicken.speed) {
       chicken.scare();
+      return false;
+    }
+
+    chickenPen.remove(chicken);
+    player.addChicken(chicken);
+
+    return true;
   }
 
   captureRoll(captureDice) {

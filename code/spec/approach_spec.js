@@ -42,7 +42,8 @@ describe("Approach", function(){
 
   it("gains a capture dice on even roll", function(){
     spyOn(approach.die, "roll").and.returnValues(1, 1);
-    approach.step();
+    var result = approach.step();
+    expect(result).toBe(true);
     expect(approach.diceCollection.captureDice).toBe(1);
   });
 
@@ -50,8 +51,9 @@ describe("Approach", function(){
     spyOn(approach.die, "roll").and.returnValues(1, 2);
     spyOn(approach.chickenPen, "scareChickens");
 
-    approach.step();
-
+    var result = approach.step();
+    
+    expect(result).toBe(false);
     expect(approach.diceCollection.captureDice).toBe(0);
     expect(approach.chickenPen.scareChickens.calls.count()).toEqual(1);
   });

@@ -9,7 +9,10 @@ class Die {
   }
 
   rollMultiple(times, func) {
-    if(func == undefined) func = (x,y)=> x + y;
+    
+    if(func == undefined) {
+      func = (x,y) => x + y;
+    }
 
     var results = [];
     for(var i = 0; i < times; i++)
