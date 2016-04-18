@@ -21,7 +21,7 @@ class CaptureTurn {
   }
 
   valid(){
-    return this.chickenPen.hasChickens() && !this.finished
+    return this.chickenPen.hasChickensForCapture() && !this.finished
   }
 
   attemptCapture(chicken){

@@ -26,16 +26,16 @@ describe("Chicken Pen", function() {
     expect(data.chickenPen.count()).toBe(3);
   });
 
-  it("should have Chickens", function() {
-    expect(data.chickenPen.hasChickens()).toBe(true);
+  it("should have Chickens for capture", function() {
+    expect(data.chickenPen.hasChickensForCapture()).toBe(true);
   });
 
-  it("should not have Chickens", function() {
+  it("should not have Chickens for capture", function() {
     data.chickenPen.chickens[0].speed = 0;
     data.chickenPen.chickens[1].speed = 0;
     data.chickenPen.chickens[2].speed = 0;
     data.chickenPen.chickens[3].speed = 0;
-    expect(data.chickenPen.hasChickens()).toBe(false);
+    expect(data.chickenPen.hasChickensForCapture()).toBe(false);
   });
 
   it("should refresh Chickens", function() {
