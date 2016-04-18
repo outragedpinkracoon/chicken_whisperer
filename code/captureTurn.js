@@ -8,7 +8,8 @@ class CaptureTurn {
   constructor(options){
 
     this.player = options.player;
-    this.approach = new Approach( {chickenPen: options.chickenPen} );
+    this.chickenPen = options.chickenPen;
+    this.approach = new Approach( {chickenPen: this.chickenPen} );
     this.capture = new Capture();
 
     this.finished = false;
@@ -19,7 +20,10 @@ class CaptureTurn {
   }
 
   attemptCapture(chicken){
-    return this.capture.attempt();
+    return this.capture.attempt(this.player, 
+                                chicken, 
+                                this.chickenPen, 
+                                this.approach.diceCollection.captureDice);
   }
 
 }

@@ -54,7 +54,7 @@ describe("Capture", function(){
 
     var result = capture.attempt(player, data.chicken1, data.chickenPen, 1);
     
-    expect(capture.failure).toHaveBeenCalled();
+    expect(capture.failure.calls.count()).toBe(1);
   });
 
   it("should not alter chicken speed on success", function(){

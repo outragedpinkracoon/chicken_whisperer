@@ -21,6 +21,7 @@ describe("Capture Turn", function(){
     player = new Player("Valerie");
     approach = new Approach({});
     capture = new Capture();
+    data = new ChickenData();
 
     var options = {
       player: player,
@@ -45,6 +46,18 @@ describe("Capture Turn", function(){
   
   it("does not start finished", function(){
     expect(turn.finished).toBe(false);
+  });
+
+  it("should make an approach", function(){
+    spyOn(turn.approach,"step");
+    turn.approachChicken();
+    expect(turn.approach.step.calls.count()).toBe(1);
+  });
+
+  it("should attempt a capture", function(){
+    spyOn(turn.capture,"attempt");
+    turn.attemptCapture(player,data.chicken1, data.chickenPen, 2);
+    expect(turn.capture.attempt.calls.count()).toBe(1);
   });
 
 
