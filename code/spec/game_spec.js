@@ -19,7 +19,12 @@ describe("Game", function() {
 
     data = new ChickenData();
 
-    game = new Game(players, data.chickenPen);
+    var options = {
+      players: players,
+      chickenPen: data.chickenPen
+    }
+
+    game = new Game(options);
 
   });
 

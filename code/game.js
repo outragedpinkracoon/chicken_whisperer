@@ -3,10 +3,11 @@ var CaptureTurn = require("./captureTurn.js")
 
 class Game {
 
-  constructor(players, chickenPen) {
-    this.players = players;
-    this.chickenPen = chickenPen;
-    this.currentPlayer = players[0];
+  constructor(options) {
+    this.players = options.players;
+    this.chickenPen = options.chickenPen;
+
+    this.currentPlayer = this.players[0];
     this.turn = null;
   }
 
