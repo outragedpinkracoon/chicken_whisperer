@@ -29,8 +29,13 @@ describe("Capture", function(){
     expect(result).toBe(4);
   });
 
+  it("should be a successful roll", function(){
+    var result = capture.successfulRoll(10, data.chicken1);
+    expect(result).toBe(true);
+  });
+
   it("should reduce chicken's speed on failure", function(){
-    spyOn(capture.die, "roll").and.returnValues(1);
+    spyOn(capture.die, "roll").and.returnValues(1,1);
     var result = capture.attempt(player, data.chicken1, data.chickenPen, 1);
     
     expect(result).toBe(false);
