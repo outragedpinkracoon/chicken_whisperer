@@ -26,6 +26,15 @@ describe("Chicken Pen", function() {
     expect(data.chickenPen.count()).toBe(3);
   });
 
+  it("should have Chickens", function() {
+    expect(data.chickenPen.hasChickens()).toBe(true);
+  });
+
+  it("should not have Chickens", function() {
+    data.chickenPen.chickens = [];
+    expect(data.chickenPen.hasChickens()).toBe(false);
+  });
+
   it("should scare all chickens", function() {
     data.chickenPen.scareChickens();
     

@@ -12,6 +12,10 @@ class ChickenPen {
     this.chickens.push(chicken);
   }
 
+  hasChickens(){
+    return this.count() > 0;
+  }
+
   remove(chicken_out) {
     var result = [];
     for(var chicken of this.chickens)

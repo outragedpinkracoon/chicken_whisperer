@@ -30,6 +30,10 @@ class Game {
     this.turn = new CaptureTurn(options);
   }
 
+  approachChicken(){
+    var success = this.turn.approachChicken();
+  }
+
 }
 
 module.exports = Game;
