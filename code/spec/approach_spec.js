@@ -53,8 +53,7 @@ describe("Approach", function(){
     approach.step();
 
     expect(approach.diceCollection.captureDice).toBe(0);
-
-    expect(approach.chickenPen.scareChickens).toHaveBeenCalled();
+    expect(approach.chickenPen.scareChickens.calls.count()).toEqual(1);
   });
 
 });
