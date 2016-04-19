@@ -62,4 +62,9 @@ describe("Game", function() {
     expect(game.currentPlayer.name).toBe("Valerie");
   });
 
+  it("should reset capture", function() {
+    game.nextTurn();
+    expect(game.currentPlayer.name).toBe("Valerie");
+  });
+
 });

@@ -11,12 +11,11 @@ class CaptureGame {
   constructor(options) {
     this.players = options.players;
     this.chickenPen = options.chickenPen;
-    this.initializeComponents();
+    this.resetApproach();
   }
 
-  initializeComponents(){
+  resetApproach(){
     this.approach = new Approach( {chickenPen: this.chickenPen.refresh()} );
-    this.capture = new Capture();
   }
 
   updateCurrentPlayer() {
@@ -33,7 +32,7 @@ class CaptureGame {
 
   nextTurn(){
     this.updateCurrentPlayer();
-    this.initializeComponents();
+    this.resetApproach();
   }
 
   approachChicken(){
