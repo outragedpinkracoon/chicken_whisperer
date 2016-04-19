@@ -20,7 +20,7 @@ class Die {
       results.push(this.roll());
     }
     
-    return results.reduce( (prev, curr) => func(prev,curr) );
+    return results.reduce((prev,curr) => func(prev,curr));
   }
 
 }

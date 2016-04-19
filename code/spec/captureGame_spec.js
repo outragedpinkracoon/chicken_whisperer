@@ -30,8 +30,7 @@ describe("Game", function() {
   });
 
   it("should have chicken pen", function() {
-    expect(game.chickenPen).not.toBe(null);
-    expect(game.chickenPen).not.toBeUndefined;
+    expect(game.chickenPen).toEqual(data.chickenPen);
   });
 
   it("should have 2 players", function() {
@@ -62,9 +61,13 @@ describe("Game", function() {
     expect(game.currentPlayer.name).toBe("Valerie");
   });
 
-  it("should reset capture", function() {
+  it("should reset approach", function() {
     game.nextTurn();
-    expect(game.currentPlayer.name).toBe("Valerie");
+    //game.approach.diceCollection.captureDice = 2;
+    game.approach.chickenPen = [];
+    game.nextTurn();
+    //expect(game.approach.diceCollection.captureDice).toBe(0);
+    expect(game.approach.chickenPen).toBe(data.chickenPen);
   });
 
 });

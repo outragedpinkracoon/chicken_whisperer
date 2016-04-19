@@ -27,6 +27,10 @@ describe("Approach", function(){
     expect(approach.die).not.toBe(null);
   });
 
+  it("should have a chickenPen", function() {
+    expect(approach.chickenPen).toEqual(data.chickenPen);
+  });
+
   it("starts with 0 capture dice", function(){
     expect(approach.diceCollection.captureDice).toEqual(0);
   });

@@ -15,7 +15,8 @@ class CaptureGame {
   }
 
   resetApproach(){
-    this.approach = new Approach( {chickenPen: this.chickenPen.refresh()} );
+    this.chickenPen.refresh();
+    this.approach = new Approach( {chickenPen: this.chickenPen} );
   }
 
   updateCurrentPlayer() {
