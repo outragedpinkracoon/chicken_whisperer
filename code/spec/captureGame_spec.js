@@ -63,10 +63,11 @@ describe("Game", function() {
 
   it("should reset approach", function() {
     game.nextTurn();
-    //game.approach.diceCollection.captureDice = 2;
+    game.approach.diceCollection.captureDice = 2;
     game.approach.chickenPen = [];
+    
     game.nextTurn();
-    //expect(game.approach.diceCollection.captureDice).toBe(0);
+    expect(game.approach.diceCollection.captureDice).toBe(0);
     expect(game.approach.chickenPen).toBe(data.chickenPen);
   });
 
