@@ -39,16 +39,10 @@ describe("Chicken Pen", function() {
   });
 
   it("should refresh Chickens", function() {
-    data.chickenPen.chickens[0].speed = 0;
-    data.chickenPen.chickens[1].speed = 0;
-    data.chickenPen.chickens[2].speed = 0;
-    data.chickenPen.chickens[3].speed = 0;
-
     data.chickenPen.chickens[0].scare = 0;
     data.chickenPen.chickens[1].scare = 0;
     data.chickenPen.chickens[2].scare = 0;
     data.chickenPen.chickens[3].scare = 0;
-
 
     data.chickenPen.refresh();
 

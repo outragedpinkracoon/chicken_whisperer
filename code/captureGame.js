@@ -1,16 +1,22 @@
 require("./extensions/array.js")
-var CaptureTurn = require("./captureTurn.js")
+
 var ApproachStatus = require("./approachStatus.js")
 var Die = require("./die.js")
 var DiceCollection = require("./diceCollection.js")
 var Approach = require("./approach.js")
+var Capture = require("./capture.js")
 
 class CaptureGame {
 
   constructor(options) {
     this.players = options.players;
     this.chickenPen = options.chickenPen;
-    this.turn = null;
+    this.initializeComponents();
+  }
+
+  initializeComponents(){
+    this.approach = new Approach( {chickenPen: this.chickenPen} );
+    this.capture = new Capture();
   }
 
   updateCurrentPlayer() {
@@ -28,17 +34,24 @@ class CaptureGame {
   nextTurn(){
     this.updateCurrentPlayer();
     this.chickenPen.refresh();
+    this.initializeComponents();
 
     var options = {
       player: this.currentPlayer,
       chickenPen: this.chickenPen
     }
 
-    this.turn = new CaptureTurn(options);
   }
 
   approachChicken(){
-    this.turn.approachChicken();
+    this.approach.step()
+  }
+
+  attemptCapture(){
+    this.capture.attempt(this.player, 
+                                    chicken, 
+                                    this.chickenPen, 
+                                    this.approach.diceCollection.captureDice)
   }
 
 }

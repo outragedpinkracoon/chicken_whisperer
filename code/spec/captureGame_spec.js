@@ -49,15 +49,17 @@ describe("Game", function() {
     expect(game.currentPlayer.name).toBe("Jay");
   });
 
-  it("should new up a turn", function() {
-    expect(game.turn).toBe(null);
-    game.nextTurn();
-    expect(game.turn).not.toBe(null);
+  it("should new up an approach", function() {
+    expect(game.approach).not.toBe(null);
+  });
+
+  it("should new up a capture", function() {
+    expect(game.approach).not.toBe(null);
   });
 
   it("should start with player 1 turn", function() {
     game.nextTurn();
-    expect(game.turn.player.name).toBe("Valerie");
+    expect(game.currentPlayer.name).toBe("Valerie");
   });
 
 });
