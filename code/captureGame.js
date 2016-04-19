@@ -15,7 +15,7 @@ class CaptureGame {
   }
 
   initializeComponents(){
-    this.approach = new Approach( {chickenPen: this.chickenPen} );
+    this.approach = new Approach( {chickenPen: this.chickenPen.refresh()} );
     this.capture = new Capture();
   }
 
@@ -33,14 +33,7 @@ class CaptureGame {
 
   nextTurn(){
     this.updateCurrentPlayer();
-    this.chickenPen.refresh();
     this.initializeComponents();
-
-    var options = {
-      player: this.currentPlayer,
-      chickenPen: this.chickenPen
-    }
-
   }
 
   approachChicken(){
