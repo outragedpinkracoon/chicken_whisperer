@@ -49,11 +49,11 @@ describe("Game", function() {
   });
 
   it("should new up an approach", function() {
-    expect(game.approach).not.toBe(null);
+    expect(game.approach).not.toBe(undefined);
   });
 
   it("should new up a capture", function() {
-    expect(game.approach).not.toBe(null);
+    expect(game.capture).not.toBe(undefined);
   });
 
   it("should start with player 1 turn", function() {

@@ -12,6 +12,8 @@ class CaptureGame {
     this.players = options.players;
     this.chickenPen = options.chickenPen;
     this.resetApproach();
+    this.capture = new Capture(this.chickenPen);
+    this.finished = false;
   }
 
   resetApproach(){
@@ -37,7 +39,7 @@ class CaptureGame {
   }
 
   approachChicken(){
-    this.approach.step()
+    if(!turn.finished) this.approach.step()
   }
 
   attemptCapture(){

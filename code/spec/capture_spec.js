@@ -13,13 +13,17 @@ describe("Capture", function(){
   var data;
 
   beforeEach(function(){
-    die = new Die();
-    capture = new Capture(die);
-    player = new Player("Valerie");
     data = new ChickenData();
+    die = new Die();
+    capture = new Capture(die, data.chickenPen);
+    player = new Player("Valerie");
   })
 
   it("should have a die", function(){
+    expect(capture.die).not.toBe(undefined);
+  });
+
+  it("should have a chickenPen", function(){
     expect(capture.die).toEqual(die);
   });
 

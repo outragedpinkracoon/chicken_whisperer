@@ -1,7 +1,9 @@
+var Die = require('./die.js')
 class Capture{
 
-  constructor(die) {
-    this.die = die;
+  constructor(chickenPen) {
+    this.chickenPen = chickenPen;
+    this.die = new Die();
   }
 
   attempt(player, chicken, chickenPen, captureDice){
