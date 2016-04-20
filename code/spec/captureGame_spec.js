@@ -22,13 +22,19 @@ describe("Game", function() {
 
     data = new ChickenData();
     var approach = new Approach(data.chickenPen);
-    var approach = new Capture(data.chickenPen, new Die());
+
+    var captureOptions = {
+      chickenPen: data.chickenPen, 
+      die: new Die()
+    }
+
+    var capture = new Capture(captureOptions);
 
     var options = {
       players: players,
       chickenPen: data.chickenPen,
       capture: capture,
-      approach: approach;
+      approach: approach
     }
 
 
@@ -55,7 +61,7 @@ describe("Game", function() {
     expect(game.currentPlayer.name).toBe("Jay");
   });
 
-  it("should new up an approach", function() {
+  it("should have an approach", function() {
     expect(game.approach).not.toBe(undefined);
   });
 

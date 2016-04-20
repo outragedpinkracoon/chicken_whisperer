@@ -8,12 +8,11 @@ var Capture = require("./capture.js")
 
 class CaptureGame {
 
-  constructor(options, approach, capture) {
+  constructor(options) {
     this.players = options.players;
     this.chickenPen = options.chickenPen;
-    this.resetApproach();
-    this.capture = capture;
-    this.approach = approach;
+    this.capture = options.capture;
+    this.approach = options.approach;
     this.finished = false;
   }
 

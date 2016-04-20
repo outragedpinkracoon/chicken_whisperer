@@ -14,8 +14,13 @@ describe("Capture", function(){
 
   beforeEach(function(){
     data = new ChickenData();
-    die = new Die();
-    capture = new Capture(die, data.chickenPen);
+    
+    var captureOptions = {
+      chickenPen: data.chickenPen, 
+      die: new Die()
+    }
+
+    capture = new Capture(captureOptions);
     player = new Player("Valerie");
   })
 
@@ -24,7 +29,7 @@ describe("Capture", function(){
   });
 
   it("should have a chickenPen", function(){
-    expect(capture.die).toEqual(die);
+    expect(capture.die).not.toBe(undefined);
   });
 
   it("should make a capture roll", function(){
