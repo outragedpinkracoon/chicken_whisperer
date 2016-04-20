@@ -17,14 +17,24 @@ describe("Approach", function(){
     data = new ChickenData();
 
     var options = {
-      chickenPen: data.chickenPen
+      chickenPen: data.chickenPen,
+      diceCollection: new DiceCollection(),
+      die: new Die()
     }
     
     approach = new Approach(options);
   });
 
   it("should have a die", function() {
-    expect(approach.die).not.toBe(null);
+    expect(approach.die).not.toBe(undefined);
+  });
+
+  it("should have a diceCollection", function() {
+    expect(approach.diceCollection).not.toBe(undefined);
+  });
+
+  it("should have a chickenPen", function() {
+    expect(approach.chickenPen).not.toBe(undefined);
   });
 
   it("should have a chickenPen", function() {

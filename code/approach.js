@@ -5,8 +5,8 @@ class Approach {
   
   constructor(options){
     this.chickenPen = options.chickenPen;
-    this.diceCollection = new DiceCollection();
-    this.die = new Die();
+    this.diceCollection = options.diceCollection;
+    this.die = options.die;
   }
 
   step(){
@@ -23,6 +23,10 @@ class Approach {
   approachRoll(){
     var times = this.diceCollection.approachDice;
     return this.die.rollMultiple(times);
+  }
+
+  reset(){
+    this.diceCollection.captureDice = 0;
   }
 } 
 

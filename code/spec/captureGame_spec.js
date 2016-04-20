@@ -7,6 +7,7 @@ var ChickenPen = require('../chickenPen.js')
 var Capture = require('../capture.js')
 var Approach = require('../approach.js')
 var Die = require('../die.js')
+var DiceCollection = require('../diceCollection.js')
 
 describe("Game", function() {
 
@@ -21,7 +22,14 @@ describe("Game", function() {
     var players = [player1, player2];
 
     data = new ChickenData();
-    var approach = new Approach(data.chickenPen);
+
+    var approachOptions = {
+      chickenPen: data.chickenPen,
+      diceCollection: new DiceCollection(),
+      die: new Die()
+    }
+
+    var approach = new Approach(approachOptions);
 
     var captureOptions = {
       chickenPen: data.chickenPen, 
@@ -75,13 +83,9 @@ describe("Game", function() {
   });
 
   it("should reset approach", function() {
-    game.nextTurn();
     game.approach.diceCollection.captureDice = 2;
-    game.approach.chickenPen = [];
-    
-    game.nextTurn();
+    game.reset();
     expect(game.approach.diceCollection.captureDice).toBe(0);
-    expect(game.approach.chickenPen).toBe(data.chickenPen);
   });
 
 });
