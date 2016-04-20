@@ -88,4 +88,11 @@ describe("Game", function() {
     expect(game.approach.diceCollection.captureDice).toBe(0);
   });
 
+  it("should reset chickenPen", function() {
+    spyOn(game.chickenPen,"refresh");
+    game.reset();
+    expect(game.chickenPen.refresh).toHaveBeenCalled();
+  });
+
+
 });
