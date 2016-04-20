@@ -4,7 +4,9 @@ var CaptureGame = require('../captureGame.js')
 var Player = require('../player.js')
 var Chicken = require('../chicken.js')
 var ChickenPen = require('../chickenPen.js')
-var ApproachStatus = require('../approachStatus.js')
+var Capture = require('../capture.js')
+var Approach = require('../approach.js')
+var Die = require('../die.js')
 
 describe("Game", function() {
 
@@ -19,11 +21,16 @@ describe("Game", function() {
     var players = [player1, player2];
 
     data = new ChickenData();
+    var approach = new Approach(data.chickenPen);
+    var approach = new Capture(data.chickenPen, new Die());
 
     var options = {
       players: players,
-      chickenPen: data.chickenPen
+      chickenPen: data.chickenPen,
+      capture: capture,
+      approach: approach;
     }
+
 
     game = new CaptureGame(options);
 
