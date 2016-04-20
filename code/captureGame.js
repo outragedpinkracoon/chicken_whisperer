@@ -42,9 +42,9 @@ class CaptureGame {
 
   attemptCapture(){
     this.capture.attempt(this.player, 
-                                    chicken, 
-                                    this.chickenPen, 
-                                    this.approach.diceCollection.captureDice)
+                         chicken, 
+                         this.chickenPen, 
+                         this.approach.diceCollection.captureDice)
   }
 
 }
