@@ -109,4 +109,13 @@ describe("Game", function() {
     expect(game.approach.step).not.toHaveBeenCalled();
   });
 
+
+  it("should attempt capture", function(){
+    game.nextTurn();
+    spyOn(game.capture,"attempt").and.returnValues(true);
+    game.attemptCapture(null);
+    expect(game.capture.attempt).toHaveBeenCalled();
+  });
+
+
 });

@@ -41,7 +41,7 @@ class CaptureGame {
     if(!this.finished) this.approach.step()
   }
 
-  attemptCapture(){
+  attemptCapture(chicken){
     if(this.finished) return;
     this.capture.attempt(this.player, 
                          chicken, 
