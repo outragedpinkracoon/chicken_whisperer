@@ -1,6 +1,5 @@
 require("./extensions/array.js")
 
-var ApproachStatus = require("./approachStatus.js")
 var Die = require("./die.js")
 var DiceCollection = require("./diceCollection.js")
 var Approach = require("./approach.js")
@@ -39,7 +38,7 @@ class CaptureGame {
   }
 
   approachChicken(){
-    if(!turn.finished) this.approach.step()
+    if(!this.finished) this.approach.step()
   }
 
   attemptCapture(){

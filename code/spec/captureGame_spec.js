@@ -73,7 +73,7 @@ describe("Game", function() {
     expect(game.approach).not.toBe(undefined);
   });
 
-  it("should new up a capture", function() {
+  it("should have a capture", function() {
     expect(game.capture).not.toBe(undefined);
   });
 
@@ -94,5 +94,19 @@ describe("Game", function() {
     expect(game.chickenPen.refresh).toHaveBeenCalled();
   });
 
+  it("should step towards chicken", function(){
+    game.nextTurn();
+    spyOn(game.approach,"step");
+    game.approachChicken();
+    expect(game.approach.step).toHaveBeenCalled();
+  });
+
+  it("should not step towards chicken if turn is finished", function(){
+    game.nextTurn();
+    game.finished = true;
+    spyOn(game.approach,"step");
+    game.approachChicken();
+    expect(game.approach.step).not.toHaveBeenCalled();
+  });
 
 });
