@@ -38,7 +38,10 @@ class CaptureGame {
   }
 
   approachChicken(){
-    if(!this.finished) this.approach.step()
+    if(this.finished) return;
+    if(this.chickenPen.hasChickensForCapture()) {
+      this.approach.step();
+    }
   }
 
   attemptCapture(chicken){
@@ -46,7 +49,9 @@ class CaptureGame {
     this.capture.attempt(this.player, 
                          chicken, 
                          this.chickenPen, 
-                         this.approach.diceCollection.captureDice)
+                         this.approach.diceCollection.captureDice);
+    this.finished = true;
+
   }
 
 }

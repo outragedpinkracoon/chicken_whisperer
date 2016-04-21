@@ -109,6 +109,14 @@ describe("Game", function() {
     expect(game.approach.step).not.toHaveBeenCalled();
   });
 
+  it("should not step towards chicken if chickenPen has no valid chickens", function(){
+    data.chickenPen.chickens = [];
+    game.nextTurn();
+    spyOn(game.approach,"step");
+    game.approachChicken();
+    expect(game.approach.step).not.toHaveBeenCalled();
+  });
+
   it("should attempt capture", function(){
     game.nextTurn();
     spyOn(game.capture,"attempt").and.returnValues(true);
@@ -118,9 +126,9 @@ describe("Game", function() {
 
   it("should not attempt capture if turn finished", function(){
     game.nextTurn();
+    game.finished = true;
     spyOn(game.capture,"attempt").and.returnValues(true);
     game.attemptCapture(null);
-    game.finished = true;
     expect(game.capture.attempt).not.toHaveBeenCalled();
   });
 
