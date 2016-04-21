@@ -18,6 +18,7 @@ class CaptureGame {
   reset(){
     this.chickenPen.refresh();
     this.approach.reset();
+    this.finished = false;
   }
 
   updateCurrentPlayer() {
@@ -37,11 +38,13 @@ class CaptureGame {
     this.reset();
   }
 
+  gameOver(){
+    return !this.chickenPen.hasChickensForCapture();
+  }
+
   approachChicken(){
-    if(this.finished) return;
-    if(this.chickenPen.hasChickensForCapture()) {
+    if(this.finished || this.gameOver()) return;
       this.approach.step();
-    }
   }
 
   attemptCapture(chicken){
