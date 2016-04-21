@@ -42,6 +42,7 @@ class CaptureGame {
   }
 
   attemptCapture(){
+    if(this.finished) return;
     this.capture.attempt(this.player, 
                          chicken, 
                          this.chickenPen, 
