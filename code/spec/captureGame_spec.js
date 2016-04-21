@@ -109,12 +109,19 @@ describe("Game", function() {
     expect(game.approach.step).not.toHaveBeenCalled();
   });
 
-
   it("should attempt capture", function(){
     game.nextTurn();
     spyOn(game.capture,"attempt").and.returnValues(true);
     game.attemptCapture(null);
     expect(game.capture.attempt).toHaveBeenCalled();
+  });
+
+  it("should not attempt capture if turn finished", function(){
+    game.nextTurn();
+    spyOn(game.capture,"attempt").and.returnValues(true);
+    game.attemptCapture(null);
+    game.finished = true;
+    expect(game.capture.attempt).not.toHaveBeenCalled();
   });
 
 
