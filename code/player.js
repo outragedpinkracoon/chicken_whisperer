@@ -3,6 +3,7 @@ class Player {
   constructor(name) {
     this.name = name;
     this.chickens = [];
+    this.isWhisperer = false;
   }
 
   addChicken(chicken){
