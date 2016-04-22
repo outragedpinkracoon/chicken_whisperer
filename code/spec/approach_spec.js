@@ -7,6 +7,7 @@ var ChickenPen = require("../chickenPen.js")
 var ChickenPen = require("../chickenPen.js")
 var Approach = require("../approach.js")
 var Die = require("../die.js")
+var WhispererChecker = require("../whispererChecker.js")
 var DefaultApproachStrategy = require("../defaultApproachStrategy.js")
 
 describe("Approach", function(){
@@ -17,9 +18,14 @@ describe("Approach", function(){
 
     data = new ChickenData();
 
+    strategyOptions = {
+      die: new Die(),
+      whispererChecker: new WhispererChecker()
+    }
+
     var options = {
       chickenPen: data.chickenPen,
-      strategy: new DefaultApproachStrategy(new Die())
+      strategy: new DefaultApproachStrategy(strategyOptions)
     }
     
     approach = new Approach(options);
@@ -52,7 +58,7 @@ describe("Approach", function(){
     spyOn(approach.chickenPen, "scareChickens");
     
     approach.step({});
-    
+
     expect(approach.captureDice).toBe(0);
     expect(approach.chickenPen.scareChickens.calls.count()).toEqual(1);
   });

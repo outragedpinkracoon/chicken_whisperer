@@ -1,9 +1,10 @@
 class DefaultApproachStrategy {
-  constructor(die){
+  constructor(options){
     this.approachDice = 2;
-    this.die = die;
+    this.die = options.die;
+    this.whispererChecker = options.whispererChecker;
   }
-  approach(approachDice){
+  approach(approachDice, player){
     var results = this.approachRoll();
     var reduced = results.reduce((prev,curr) => prev +curr);
     return reduced.isEven();

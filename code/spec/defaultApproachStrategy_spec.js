@@ -1,12 +1,17 @@
 require("babel-register");
 var DefaultApproachStrategy = require('../defaultApproachStrategy.js');
+var WhispererChecker = require('../whispererChecker.js');
 var Die = require('../die');
 
 describe("Default Approach Strategy", function(){
 
   var strategy;
   beforeEach(function(){
-    strategy = new DefaultApproachStrategy(new Die());
+    var options = {
+      die: new Die(),
+      whispererChecker: new WhispererChecker()
+    }
+    strategy = new DefaultApproachStrategy(options);
   });
 
   it("should make approach roll", function(){
