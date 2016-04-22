@@ -14,6 +14,10 @@ describe("Default Approach Strategy", function(){
     strategy = new DefaultApproachStrategy(options);
   });
 
+  it("should have a die", function(){
+    expect(strategy.die).not.toBe(undefined);
+  });
+
   it("should make approach roll", function(){
     spyOn(strategy.die,"roll").and.returnValues(4,4)
     var result = strategy.approachRoll();
