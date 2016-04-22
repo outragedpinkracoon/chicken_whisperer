@@ -1,7 +1,8 @@
 var ApproachStrategy = require('./approachStrategy');
 
 class BasicApproachStrategy extends ApproachStrategy {
-  approach(approachDice, player){
+
+  approach(player){
     var results = this.approachRoll();
     this.whispererChecker.update(results, player);
 

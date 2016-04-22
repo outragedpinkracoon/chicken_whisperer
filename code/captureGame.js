@@ -58,7 +58,7 @@ class CaptureGame {
   approachChicken(){
     this.setApproachStrategy();
     if(this.finished || this.gameOver()) return;
-      this.approach.step();
+      this.approach.step(this.currentPlayer);
   }
 
   setApproachStrategy(){

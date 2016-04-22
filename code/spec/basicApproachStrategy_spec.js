@@ -17,7 +17,7 @@ describe("Basic Approach Strategy", function(){
   it("should be successful on even roll", function(){
     spyOn(strategy.die,"roll").and.returnValues(4,4)
 
-    var result = strategy.approach(2,{});
+    var result = strategy.approach({});
 
     expect(result).toBe(true);
   });
@@ -25,7 +25,7 @@ describe("Basic Approach Strategy", function(){
   it("should be unsuccessful on odd roll", function(){
     spyOn(strategy.die,"roll").and.returnValues(4,3)
 
-    var result = strategy.approach(2,{});
+    var result = strategy.approach({});
 
     expect(result).toBe(false);
   });
@@ -34,7 +34,7 @@ describe("Basic Approach Strategy", function(){
     spyOn(strategy.die,"roll").and.returnValues(4,3)
     spyOn(strategy.whispererChecker,"update");
 
-    strategy.approach(2,{});
+    strategy.approach({});
 
     expect(strategy.whispererChecker.update).toHaveBeenCalled();
   });

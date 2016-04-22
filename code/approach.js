@@ -11,7 +11,7 @@ class Approach {
   }
 
   step(player){
-    var result = this.strategy.approach(this.approachDice, player);
+    var result = this.strategy.approach(player);
 
     if(result == true){
       this.captureDice++;
