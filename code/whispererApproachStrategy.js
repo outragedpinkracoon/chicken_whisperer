@@ -1,8 +1,7 @@
-class WhispererApproachStrategy {
-  constructor(options){
-    this.die = options.die;
-    this.whispererChecker = options.whispererChecker;
-  }
+var ApproachStrategy = require('./approachStrategy');
+
+class WhispererApproachStrategy extends ApproachStrategy {
+  
 }
 
 module.exports = WhispererApproachStrategy;

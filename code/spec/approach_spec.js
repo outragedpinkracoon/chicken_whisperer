@@ -18,7 +18,7 @@ describe("Approach", function(){
 
     data = new ChickenData();
 
-    strategyOptions = {
+    var strategyOptions = {
       die: new Die(),
       whispererChecker: new WhispererChecker()
     }

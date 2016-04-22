@@ -1,4 +1,5 @@
 require("babel-register");
+
 var ChickenData = require('./data/chickenData.js')
 var CaptureGame = require('../captureGame.js')
 var Player = require('../player.js')
@@ -9,6 +10,7 @@ var Approach = require('../approach.js')
 var BasicApproachStrategy = require('../basicApproachStrategy.js')
 var Die = require('../die.js')
 var DiceCollection = require('../diceCollection.js')
+var WhispererChecker = require('../whispererChecker.js')
 
 describe("Game", function() {
 
@@ -23,6 +25,11 @@ describe("Game", function() {
     var players = [player1, player2];
 
     data = new ChickenData();
+
+    var strategyOptions = {
+      die: new Die(),
+      whispererChecker: new WhispererChecker()
+    }
 
     var approachOptions = {
       chickenPen: data.chickenPen,
