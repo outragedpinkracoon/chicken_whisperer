@@ -14,7 +14,7 @@ describe("Approach", function(){
   var approach;
 
   beforeEach(function(){
-    
+
     data = new ChickenData();
 
     var options = {
@@ -43,19 +43,16 @@ describe("Approach", function(){
 
   it("gains a capture dice on even roll", function(){
     spyOn(approach.strategy.die, "roll").and.returnValues(1, 1);
-    var result = approach.step();
-
-    expect(result).toBe(true);
+    approach.step();
     expect(approach.captureDice).toBe(1);
   });
 
   it("scares chickens on odd roll", function(){
     spyOn(approach.strategy.die, "roll").and.returnValues(1, 2);
     spyOn(approach.chickenPen, "scareChickens");
-
-    var result = approach.step();
     
-    expect(result).toBe(false);
+    approach.step({});
+    
     expect(approach.captureDice).toBe(0);
     expect(approach.chickenPen.scareChickens.calls.count()).toEqual(1);
   });

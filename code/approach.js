@@ -9,14 +9,13 @@ class Approach {
     this.strategy = options.strategy;
   }
 
-  step(){
+  step(player){
     var result = this.strategy.approach(this.approachDice);
+    
     if(result == true){
       this.captureDice++;
-        return true;
     }
     this.chickenPen.scareChickens();
-    return false;
   }
 
   reset(){
