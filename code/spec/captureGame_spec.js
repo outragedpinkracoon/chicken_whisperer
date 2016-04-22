@@ -132,5 +132,10 @@ describe("Game", function() {
     expect(game.capture.attempt).not.toHaveBeenCalled();
   });
 
+  it("should be game over when there are no chickens to capture", function(){
+    game.chickenPen.chickens = [];
+    expect(game.gameOver()).toBe(true);
+  });
+
 
 });
