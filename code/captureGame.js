@@ -19,6 +19,13 @@ class CaptureGame {
     this.chickenPen.refresh();
     this.approach.reset();
     this.finished = false;
+    this.resetPlayers();
+  }
+
+  resetPlayers(){
+    this.players.forEach(function(player, index){
+      player.isWhisperer = false;
+    });
   }
 
   updateCurrentPlayer() {

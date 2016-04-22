@@ -150,4 +150,12 @@ describe("Game", function() {
     expect(data.chicken1.speed).toBe(9);
   });
 
+  it("should reset chickenWhisperer", function(){
+    game.players.first().isWhisperer = true;
+    game.resetPlayers();
+    expect(game.players[0].isWhisperer).toBe(false);
+    expect(game.players[1].isWhisperer).toBe(false);
+  });
+
+
 });
