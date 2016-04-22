@@ -36,7 +36,7 @@ class Capture{
 
   captureRoll(captureDice) {
     var times = captureDice;
-    return this.die.rollMultiple(times);
+    return this.die.rollAndReduce(times);
   }
 }
 

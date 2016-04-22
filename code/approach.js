@@ -22,7 +22,7 @@ class Approach {
 
   approachRoll(){
     var times = this.diceCollection.approachDice;
-    return this.die.rollMultiple(times);
+    return this.die.rollAndReduce(times);
   }
 
   reset(){
