@@ -8,6 +8,7 @@ class Approach {
     this.captureDice = 0;
     this.die = options.die;
     this.strategy = options.strategy;
+    this.approachDice = 2;
   }
 
   step(){
@@ -29,7 +30,7 @@ class Approach {
   }
 
   approachRoll(){
-    return this.die.rollAndReduce();
+    return this.die.rollAndReduce(this.approachDice);
   }
 
   reset(){

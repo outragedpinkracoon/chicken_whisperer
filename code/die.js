@@ -8,7 +8,7 @@ class Die {
     return Math.ceil(Math.random() * this.sides);
   }
 
-  rollAndReduce(times = 2, func) {
+  rollAndReduce(times, func) {
     
     if(func == undefined) {
       func = (x,y) => x + y;
@@ -19,7 +19,7 @@ class Die {
     return results.reduce((prev,curr) => func(prev,curr));
   }
 
-  rollMultiple(times = 2){
+  rollMultiple(times){
     var results = [];
     for(var i = 0; i < times; i++)
     {

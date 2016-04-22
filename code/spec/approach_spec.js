@@ -45,6 +45,10 @@ describe("Approach", function(){
     expect(approach.captureDice).toBe(0);
   });
 
+  it("starts with 2 approach dice", function(){
+    expect(approach.approachDice).toBe(2);
+  });
+
   it("returns approach dice roll", function(){
     spyOn(approach.die, "roll").and.returnValues(1, 1);
     var result = approach.approachRoll();
