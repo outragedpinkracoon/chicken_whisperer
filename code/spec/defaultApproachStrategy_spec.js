@@ -12,7 +12,7 @@ describe("Default Approach Strategy", function(){
   it("should make approach roll", function(){
     spyOn(strategy.die,"roll").and.returnValues(4,4)
     var result = strategy.approachRoll();
-    expect(result).toBe(8);
+    expect(result).toEqual([4,4]);
   });
 
   it("should be successful on even roll", function(){

@@ -4,12 +4,13 @@ class DefaultApproachStrategy {
     this.die = die;
   }
   approach(approachDice){
-    var result = this.approachRoll();
-    return result.isEven();
+    var results = this.approachRoll();
+    var reduced = results.reduce((prev,curr) => prev +curr);
+    return reduced.isEven();
   }
 
   approachRoll(){
-    return this.die.rollAndReduce(this.approachDice);
+    return this.die.rollMultiple(this.approachDice);
   }
 }
 
