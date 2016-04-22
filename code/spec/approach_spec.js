@@ -49,7 +49,7 @@ describe("Approach", function(){
 
   it("gains a capture dice on even roll", function(){
     spyOn(approach.strategy.die, "roll").and.returnValues(1, 1);
-    approach.step();
+    approach.step({});
     expect(approach.captureDice).toBe(1);
   });
 
