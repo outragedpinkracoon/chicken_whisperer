@@ -2,6 +2,10 @@ var ApproachStrategy = require('./approachStrategy');
 
 class WhispererApproachStrategy extends ApproachStrategy {
 
+  name(){
+    return "WhispererApproachStrategy";
+  }
+
   approach(player){
     var results = this.approachRoll();
     this.whispererChecker.update(results, player);

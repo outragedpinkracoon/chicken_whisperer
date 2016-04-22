@@ -3,6 +3,8 @@ require("./extensions/array.js")
 var Die = require("./die.js")
 var Approach = require("./approach.js")
 var Capture = require("./capture.js")
+var BasicApproachStrategy = require("./basicApproachStrategy.js")
+var WhispererApproachStrategy = require("./whispererApproachStrategy.js")
 
 class CaptureGame {
 
@@ -63,9 +65,9 @@ class CaptureGame {
 
   setApproachStrategy(){
     if(this.currentPlayer.isWhisperer){
-      this.approach.setStrategy("whisperer");
+      this.approach.setStrategy(WhispererApproachStrategy.name);
     } else {
-      this.approach.setStrategy("basic");
+      this.approach.setStrategy(BasicApproachStrategy.name);
     }
   }
 

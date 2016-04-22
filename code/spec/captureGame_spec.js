@@ -8,6 +8,7 @@ var ChickenPen = require('../chickenPen.js')
 var Capture = require('../capture.js')
 var Approach = require('../approach.js')
 var BasicApproachStrategy = require('../basicApproachStrategy.js')
+var WhispererApproachStrategy = require('../whispererApproachStrategy.js')
 var Die = require('../die.js')
 var DiceCollection = require('../diceCollection.js')
 var WhispererChecker = require('../whispererChecker.js')
@@ -28,13 +29,14 @@ describe("Game", function() {
 
     var strategyOptions = {
       die: new Die(),
-      whispererChecker: new WhispererChecker()
+      whispererChecker: new WhispererChecker(),
     }
 
     var approachOptions = {
       chickenPen: data.chickenPen,
       strategies: {
-        basic: new BasicApproachStrategy(strategyOptions)
+        "BasicApproachStrategy": new BasicApproachStrategy(strategyOptions),
+        "WhispererApproachStrategy" : new WhispererApproachStrategy(strategyOptions)
       }
     }
 
@@ -166,5 +168,16 @@ describe("Game", function() {
     expect(game.players[1].isWhisperer).toBe(false);
   });
 
+  it("should not swap whisperer strategy", function(){
+    game.currentPlayer = {};
+    game.setApproachStrategy();
+    expect(game.approach.strategy.name()).toBe(BasicApproachStrategy.name);
+  });
+
+  it("should swap whisperer strategy", function(){
+    game.currentPlayer = {isWhisperer: true};
+    game.setApproachStrategy();
+    expect(game.approach.strategy.name()).toBe(WhispererApproachStrategy.name);
+  });
 
 });
