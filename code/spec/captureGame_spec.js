@@ -25,7 +25,6 @@ describe("Game", function() {
 
     var approachOptions = {
       chickenPen: data.chickenPen,
-      diceCollection: new DiceCollection(),
       die: new Die()
     }
 

@@ -1,7 +1,6 @@
 require("./extensions/array.js")
 
 var Die = require("./die.js")
-var DiceCollection = require("./diceCollection.js")
 var Approach = require("./approach.js")
 var Capture = require("./capture.js")
 
