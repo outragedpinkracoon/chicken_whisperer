@@ -14,8 +14,7 @@ class Die {
       func = (x,y) => x + y;
     }
 
-    results = rollMultiple(times)
-    
+    var results = this.rollMultiple(times)
     
     return results.reduce((prev,curr) => func(prev,curr));
   }

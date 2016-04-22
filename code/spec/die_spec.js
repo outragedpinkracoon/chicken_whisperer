@@ -10,7 +10,7 @@ describe("Die", function(){
 
   it("should roll twice", function(){
     spyOn(die, "roll").and.returnValues(1,1);
-    die.rollAndReduce(2);
+    die.rollMultiple(2);
     expect(die.roll.calls.count()).toEqual(2);
   });
 
