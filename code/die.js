@@ -19,7 +19,7 @@ class Die {
     return results.reduce((prev,curr) => func(prev,curr));
   }
 
-  rollMultiple(times){
+  rollMultiple(times = 2){
     var results = [];
     for(var i = 0; i < times; i++)
     {

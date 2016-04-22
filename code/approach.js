@@ -7,6 +7,7 @@ class Approach {
     this.chickenPen = options.chickenPen;
     this.diceCollection = options.diceCollection;
     this.die = options.die;
+    this.strategy = options.strategy;
   }
 
   step(){
@@ -18,7 +19,13 @@ class Approach {
     }
     this.chickenPen.scareChickens();
     return false;
-    // var result = approachStrategy.
+    // var result = approachStrategy.run(this.diceCollection.approachDice);
+    // if(result == true){
+    //   this.diceCollection.addCaptureDie();
+    //       return true;
+    // }
+    // this.chickenPen.scareChickens();
+    // return false;
   }
 
   approachRoll(){

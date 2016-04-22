@@ -8,6 +8,7 @@ var ChickenPen = require("../chickenPen.js")
 var Approach = require("../approach.js")
 var DiceCollection = require("../diceCollection.js")
 var Die = require("../die.js")
+var DefaultApproachStrategy = require("../defaultApproachStrategy.js")
 
 describe("Approach", function(){
   var data;
@@ -19,7 +20,8 @@ describe("Approach", function(){
     var options = {
       chickenPen: data.chickenPen,
       diceCollection: new DiceCollection(),
-      die: new Die()
+      die: new Die(),
+      strategy: new DefaultApproachStrategy()
     }
     
     approach = new Approach(options);
@@ -35,6 +37,10 @@ describe("Approach", function(){
 
   it("should have a chickenPen", function() {
     expect(approach.chickenPen).not.toBe(undefined);
+  });
+
+  it("should have an approachStrategy", function() {
+    expect(approach.strategy).not.toBe(undefined);
   });
 
   it("should have a chickenPen", function() {
