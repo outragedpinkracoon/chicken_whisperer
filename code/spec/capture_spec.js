@@ -38,19 +38,13 @@ describe("Capture", function(){
     expect(capture.whispererChecker).not.toBe(undefined);
   });
 
-  it("should make a capture roll", function(){
-    spyOn(capture.die, "roll").and.returnValues(2,2);
-    var result = capture.captureRoll(2);
-    expect(result).toBe(4);
-  });
-
   it("should be a successful roll", function(){
-    var result = capture.successfulRoll(10, data.chicken1);
+    var result = capture.successfulRoll([5,5], data.chicken1);
     expect(result).toBe(true);
   });
 
   it("should be an unsuccessful roll", function(){
-    var result = capture.successfulRoll(1, data.chicken1);
+    var result = capture.successfulRoll([1,1], data.chicken1);
     expect(result).toBe(false);
   });
 

@@ -1,6 +1,6 @@
 var Die = require('./die.js')
 var WhispererChecker = require('./whispererChecker');
-class Capture{
+class Capture {
 
   constructor(options) {
     this.chickenPen = options.chickenPen;
@@ -9,18 +9,24 @@ class Capture{
   }
 
   attempt(player, chicken, chickenPen, captureDice){
-    var roll = this.captureRoll(captureDice);
+
+    var rolls = this.die.rollMultiple(captureDice);
     var result;
-    if(this.successfulRoll(roll, chicken)) {
+    
+    if(this.successfulRoll(rolls, chicken)) {
       result = this.success(chickenPen, player, chicken);
+      //this.whispererChecker.update(player, rolls);
     } else {
       result =  this.failure(chicken)
     }
+
     return result;
+
   }
 
   successfulRoll(result, chicken){
-    return result >= chicken.speed
+    var sum = result.reduce((prev,curr) => prev + curr);
+    return sum >= chicken.speed
   }
 
   failure(chicken){
@@ -34,10 +40,6 @@ class Capture{
     return true;
   }
 
-  captureRoll(captureDice) {
-    var times = captureDice;
-    return this.die.rollAndReduce(times);
-  }
 }
 
 module.exports = Capture;
