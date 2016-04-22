@@ -56,8 +56,17 @@ class CaptureGame {
   }
 
   approachChicken(){
+    this.setApproachStrategy();
     if(this.finished || this.gameOver()) return;
       this.approach.step();
+  }
+
+  setApproachStrategy(){
+    if(this.currentPlayer.isWhisperer){
+      this.approach.setStrategy("whisperer");
+    } else {
+      this.approach.setStrategy("basic");
+    }
   }
 
   attemptCapture(chicken){

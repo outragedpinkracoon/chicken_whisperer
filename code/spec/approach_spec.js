@@ -8,7 +8,7 @@ var ChickenPen = require("../chickenPen.js")
 var Approach = require("../approach.js")
 var Die = require("../die.js")
 var WhispererChecker = require("../whispererChecker.js")
-var DefaultApproachStrategy = require("../defaultApproachStrategy.js")
+var BasicApproachStrategy = require("../basicApproachStrategy.js")
 
 describe("Approach", function(){
   var data;
@@ -25,7 +25,9 @@ describe("Approach", function(){
 
     var options = {
       chickenPen: data.chickenPen,
-      strategy: new DefaultApproachStrategy(strategyOptions)
+      strategies: {
+        basic: new BasicApproachStrategy(strategyOptions)
+      }
     }
     
     approach = new Approach(options);

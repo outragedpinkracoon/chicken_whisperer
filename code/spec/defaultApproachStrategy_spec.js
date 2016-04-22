@@ -1,9 +1,9 @@
 require("babel-register");
-var DefaultApproachStrategy = require('../defaultApproachStrategy.js');
+var BasicApproachStrategy = require('../basicApproachStrategy.js');
 var WhispererChecker = require('../whispererChecker.js');
 var Die = require('../die');
 
-describe("Default Approach Strategy", function(){
+describe("Basic Approach Strategy", function(){
 
   var strategy;
   beforeEach(function(){
@@ -11,7 +11,7 @@ describe("Default Approach Strategy", function(){
       die: new Die(),
       whispererChecker: new WhispererChecker()
     }
-    strategy = new DefaultApproachStrategy(options);
+    strategy = new BasicApproachStrategy(options);
   });
 
   it("should have a die", function(){
@@ -26,7 +26,7 @@ describe("Default Approach Strategy", function(){
     spyOn(strategy.die,"roll").and.returnValues(4,4)
 
     var result = strategy.approachRoll();
-    
+
     expect(result).toEqual([4,4]);
   });
 

@@ -1,4 +1,4 @@
-class DefaultApproachStrategy {
+class BasicApproachStrategy {
   constructor(options){
     this.approachDice = 2;
     this.die = options.die;
@@ -17,4 +17,4 @@ class DefaultApproachStrategy {
   }
 }
 
-module.exports = DefaultApproachStrategy;
+module.exports = BasicApproachStrategy;

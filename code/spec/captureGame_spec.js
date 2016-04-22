@@ -6,6 +6,7 @@ var Chicken = require('../chicken.js')
 var ChickenPen = require('../chickenPen.js')
 var Capture = require('../capture.js')
 var Approach = require('../approach.js')
+var BasicApproachStrategy = require('../basicApproachStrategy.js')
 var Die = require('../die.js')
 var DiceCollection = require('../diceCollection.js')
 
@@ -25,7 +26,9 @@ describe("Game", function() {
 
     var approachOptions = {
       chickenPen: data.chickenPen,
-      die: new Die()
+      strategies: {
+        basic: new BasicApproachStrategy(strategyOptions)
+      }
     }
 
     var approach = new Approach(approachOptions);

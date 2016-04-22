@@ -6,7 +6,8 @@ class Approach {
   constructor(options){
     this.chickenPen = options.chickenPen;
     this.captureDice = 0;
-    this.strategy = options.strategy;
+    this.strategies = options.strategies;
+    this.strategy = this.strategies["basic"];
   }
 
   step(player){
@@ -16,6 +17,10 @@ class Approach {
       this.captureDice++;
     }
     this.chickenPen.scareChickens();
+  }
+
+  setStrategy(key){
+    this.strategy = this.strategies[key];
   }
 
   reset(){
