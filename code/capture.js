@@ -15,7 +15,6 @@ class Capture {
     
     if(this.successfulRoll(rolls, chicken)) {
       result = this.success(chickenPen, player, chicken);
-      //this.whispererChecker.update(player, rolls);
     } else {
       result =  this.failure(chicken)
     }

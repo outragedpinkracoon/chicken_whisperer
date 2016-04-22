@@ -18,6 +18,7 @@ class Approach {
     }
     this.chickenPen.scareChickens();
     return false;
+    // var result = approachStrategy.
   }
 
   approachRoll(){
