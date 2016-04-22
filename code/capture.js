@@ -1,11 +1,9 @@
 var Die = require('./die.js')
-var WhispererChecker = require('./whispererChecker');
 class Capture {
 
   constructor(options) {
     this.chickenPen = options.chickenPen;
     this.die = options.die;
-    this.whispererChecker = options.whispererChecker;
   }
 
   attempt(player, chicken, chickenPen, captureDice){

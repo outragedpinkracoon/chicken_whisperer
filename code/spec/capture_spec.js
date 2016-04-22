@@ -4,7 +4,6 @@ var Capture = require("../capture.js")
 var Die = require("../die.js")
 var Player = require("../player.js")
 var ChickenData = require("./data/chickenData.js")
-var WhispererChecker = require("../whispererChecker.js")
 
 describe("Capture", function(){
 
@@ -18,8 +17,7 @@ describe("Capture", function(){
 
     var captureOptions = {
       chickenPen: data.chickenPen, 
-      die: new Die(),
-      whispererChecker: new WhispererChecker()
+      die: new Die()
     }
 
     capture = new Capture(captureOptions);
@@ -33,11 +31,7 @@ describe("Capture", function(){
   it("should have a chickenPen", function(){
     expect(capture.die).not.toBe(undefined);
   });
-
-  it("should have a whispererChecker", function(){
-    expect(capture.whispererChecker).not.toBe(undefined);
-  });
-
+  
   it("should be a successful roll", function(){
     var result = capture.successfulRoll([5,5], data.chicken1);
     expect(result).toBe(true);
