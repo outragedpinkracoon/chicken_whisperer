@@ -25,4 +25,8 @@ describe("Player", function() {
     player.addChicken(chicken);
     expect(player.chickenCount()).toBe(1);
   });
+
+  it("should not be the whisperer at the start", function() {
+    expect(player.isWhisperer).toBe(false);
+  });
 });
