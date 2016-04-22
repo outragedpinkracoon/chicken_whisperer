@@ -6,7 +6,6 @@ var Chicken = require("../chicken.js")
 var ChickenPen = require("../chickenPen.js")
 var ChickenPen = require("../chickenPen.js")
 var Approach = require("../approach.js")
-var DiceCollection = require("../diceCollection.js")
 var Die = require("../die.js")
 var DefaultApproachStrategy = require("../defaultApproachStrategy.js")
 
@@ -19,7 +18,6 @@ describe("Approach", function(){
 
     var options = {
       chickenPen: data.chickenPen,
-      diceCollection: new DiceCollection(),
       die: new Die(),
       strategy: new DefaultApproachStrategy()
     }
@@ -29,10 +27,6 @@ describe("Approach", function(){
 
   it("should have a die", function() {
     expect(approach.die).not.toBe(undefined);
-  });
-
-  it("should have a diceCollection", function() {
-    expect(approach.diceCollection).not.toBe(undefined);
   });
 
   it("should have a chickenPen", function() {
@@ -48,11 +42,7 @@ describe("Approach", function(){
   });
 
   it("starts with 0 capture dice", function(){
-    expect(approach.diceCollection.captureDice).toEqual(0);
-  });
-
-  it("starts with 2 approach dice", function(){
-    expect(approach.diceCollection.approachDice).toBe(2);
+    expect(approach.captureDice).toBe(0);
   });
 
   it("returns approach dice roll", function(){
@@ -67,7 +57,7 @@ describe("Approach", function(){
     var result = approach.step();
 
     expect(result).toBe(true);
-    expect(approach.diceCollection.captureDice).toBe(1);
+    expect(approach.captureDice).toBe(1);
   });
 
   it("scares chickens on odd roll", function(){
@@ -77,7 +67,7 @@ describe("Approach", function(){
     var result = approach.step();
     
     expect(result).toBe(false);
-    expect(approach.diceCollection.captureDice).toBe(0);
+    expect(approach.captureDice).toBe(0);
     expect(approach.chickenPen.scareChickens.calls.count()).toEqual(1);
   });
 

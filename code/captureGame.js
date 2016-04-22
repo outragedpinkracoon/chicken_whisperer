@@ -66,7 +66,7 @@ class CaptureGame {
     this.capture.attempt(this.player, 
                          chicken, 
                          this.chickenPen, 
-                         this.approach.diceCollection.captureDice);
+                         this.approach.captureDice);
     this.finished = true;
 
   }

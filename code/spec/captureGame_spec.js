@@ -83,9 +83,9 @@ describe("Game", function() {
   });
 
   it("should reset approach", function() {
-    game.approach.diceCollection.captureDice = 2;
+    game.approach.captureDice = 2;
     game.reset();
-    expect(game.approach.diceCollection.captureDice).toBe(0);
+    expect(game.approach.captureDice).toBe(0);
   });
 
   it("should reset chickenPen", function() {

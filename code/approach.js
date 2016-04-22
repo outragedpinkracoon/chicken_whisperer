@@ -5,7 +5,7 @@ class Approach {
   
   constructor(options){
     this.chickenPen = options.chickenPen;
-    this.diceCollection = options.diceCollection;
+    this.captureDice = 0;
     this.die = options.die;
     this.strategy = options.strategy;
   }
@@ -14,7 +14,7 @@ class Approach {
     var result = this.approachRoll();
     
     if(result.isEven()){
-      this.diceCollection.addCaptureDie();
+      this.captureDice++;
       return true;
     }
     this.chickenPen.scareChickens();
@@ -29,12 +29,11 @@ class Approach {
   }
 
   approachRoll(){
-    var times = this.diceCollection.approachDice;
-    return this.die.rollAndReduce(times);
+    return this.die.rollAndReduce();
   }
 
   reset(){
-    this.diceCollection.captureDice = 0;
+    this.captureDice = 0;
   }
 } 
 
