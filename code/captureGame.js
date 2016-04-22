@@ -34,12 +34,19 @@ class CaptureGame {
   }
 
   nextTurn(){
+    if(this.lastTurn()) {
+      this.chickenPen.chickens.first().reduceSpeed();
+    }
     this.updateCurrentPlayer();
     this.reset();
   }
 
   gameOver(){
     return !this.chickenPen.hasChickensForCapture();
+  }
+
+  lastTurn(){
+    return this.chickenPen.count() == 1;
   }
 
   approachChicken(){

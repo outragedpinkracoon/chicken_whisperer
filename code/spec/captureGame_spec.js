@@ -137,5 +137,17 @@ describe("Game", function() {
     expect(game.gameOver()).toBe(true);
   });
 
+  it("should be the last turn", function(){
+    game.chickenPen.chickens = [{}];
+    expect(game.lastTurn()).toBe(true);
+  });
+
+  it("should reduce speed of last chicken each turn", function(){
+    data.chicken1.speed = 10;
+    game.chickenPen.chickens = [data.chicken1];
+    expect(game.lastTurn()).toBe(true);
+    game.nextTurn();
+    expect(data.chicken1.speed).toBe(9);
+  });
 
 });
