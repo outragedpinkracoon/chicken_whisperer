@@ -22,6 +22,14 @@ describe("Basic Approach Strategy", function(){
     expect(result).toBe(true);
   });
 
+  it("should be successful on 1,1 roll", function(){
+    spyOn(strategy.die,"roll").and.returnValues(1,1)
+
+    var result = strategy.approach({});
+
+    expect(result).toBe(true);
+  });
+
   it("should be unsuccessful on odd roll", function(){
     spyOn(strategy.die,"roll").and.returnValues(4,3)
 

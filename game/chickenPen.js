@@ -15,7 +15,7 @@ class ChickenPen {
   hasChickensForCapture(){
     for(var chicken of this.chickens)
     {
-      if(chicken.speed > 0)
+      if(chicken.scare > 0)
         return true;
     }
     return false;

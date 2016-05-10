@@ -7,7 +7,7 @@ class Approach {
     this.chickenPen = options.chickenPen;
     this.captureDice = 0;
     this.strategies = options.strategies;
-    this.strategy = this.strategies["basic"];
+    this.strategy = this.strategies["BasicApproachStrategy"];
   }
 
   step(player){
